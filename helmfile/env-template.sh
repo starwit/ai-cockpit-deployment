@@ -1,0 +1,4 @@
+
+export CLIENT_SECRET=aicockpit
+export KEYCLOAK_ADMIN=aicockpit
+export KEYCLOAK_ADMIN_PW=aicockpit
