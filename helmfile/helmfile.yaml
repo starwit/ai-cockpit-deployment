@@ -1,0 +1,70 @@
+repositories:
+  - name: starwitorg
+    url: registry-1.docker.io/starwitorg
+    oci: true
+
+helmDefaults:
+  wait: true
+
+environments:
+  default:
+    values:
+      - namespace: aic
+        hostname: markus-laptop
+        tls: false
+        auth:
+          client_secret: aicockpit
+          realm_admin_pw: aicockpit
+          keycloak_admin: admin
+  aic-dev:
+    values:  
+      - namespace: aic
+        hostname: aic.starwit-infra.de
+        tls: true
+        auth:
+          client_secret: {{ requiredEnv "CLIENT_SECRET" }}
+          keycloak_admin: {{ requiredEnv "KEYCLOAK_ADMIN" }}
+          realm_admin_pw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+
+---
+releases:
+  - name: transparency-api 
+    namespace: aic
+    chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-transparency-chart
+    version: "0.0.1"
+
+  - name: decision-api 
+    namespace: aic
+    chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-decision-chart
+    version: "0.0.1"
+
+  - name: keycloak
+    namespace: aic
+    chart: oci://registry-1.docker.io/bitnamicharts/keycloak
+    installed: false
+    version: "21.0.3"  
+    values:
+      - httpRelativePath: / # set context path for keycloak console
+        auth:
+          adminUser: admin
+          adminPassword: {{ .Values.auth.keycloak_admin }}
+        proxy: edge
+        extraEnvVars:
+          - name: KC_HOSTNAME_URL
+            value: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}
+          - name: KC_HOSTNAME_ADMIN_URL
+            value: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values | get "hostname" "localhost" }}
+        ingress:
+          enabled: true
+          hostname: auth.{{ .Values.hostname }}
+          tls: true
+          selfSigned: {{ eq .Environment.Name "default" }}
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+        postgresql:
+          nameOverride: "keycloak-postgresql"
+          auth:
+            password: bn_keycloak
+        keycloakConfigCli:
+          enabled: true
+          existingConfigmap: aicockpit    
