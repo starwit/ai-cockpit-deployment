@@ -1,0 +1,10 @@
+services:
+  aic-transparency:
+    image: starwitorg/starwit-aicapi-transparency:latest
+    ports:
+      - 8080:8080
+
+  aic-decision:
+    image: starwitorg/starwit-aicapi-decision:latest
+    ports:
+      - 8081:8080
