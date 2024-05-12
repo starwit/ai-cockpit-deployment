@@ -38,6 +38,35 @@ releases:
     chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-decision-chart
     version: "0.0.1"
 
+  - name: aicockpit 
+    namespace: aic
+    chart: starwitorg/ai-cockpit-chart
+    version: "0.0.1"
+    values:
+      - image:
+          tag: "0.0.1-SNAPSHOT-3"
+        app:
+          context_path: "/ai-cockpit"
+        auth:
+          enabled: false
+        postgresql:
+          auth:
+            database: aicockpit
+            username: aicockpit
+            password: aicockpit
+        ingress:
+          enabled: true
+          className: traefik
+          hosts:
+            - host: aic.{{ .Values.hostname }}
+              paths:
+                - path: "/ai-cockpit"
+                  pathType: ImplementationSpecific
+          tls:
+            - hosts:
+              - aic.{{ .Values.hostname }}
+              secretName: aic.{{ .Values.hostname }}          
+
   - name: keycloak
     namespace: aic
     chart: oci://registry-1.docker.io/bitnamicharts/keycloak
