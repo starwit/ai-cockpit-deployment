@@ -5,9 +5,5 @@
 hostname: {{ .Values.hostname }}
 tls: {{ .Values.tls }}
 auth:
-  client_secret: {{ .Values.auth.client_secret }}
-  realm_admin_pw: {{ .Values.auth.realm_admin_pw }}
-
-passwords:
-  databackend: {{ .Values.dbpasswords.databackend }}
-  analytics: {{ .Values.dbpasswords.analytics }}
+  clientSecret: {{ .Values.auth.clientSecret }}
+  realmAdminPw: {{ .Values.auth.realmAdminPw }}
