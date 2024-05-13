@@ -11,10 +11,10 @@ environments:
     values:
       - namespace: aic
         hostname: markus-laptop
-        tls: false
+        tls: true
         auth:
-          client_secret: aicockpit
-          realm_admin_pw: aicockpit
+          clientSecret: aicockpit
+          realmAdminPw: aicockpit
           keycloak_admin: admin
   aic-dev:
     values:  
@@ -22,33 +22,44 @@ environments:
         hostname: aic.starwit-infra.de
         tls: true
         auth:
-          client_secret: {{ requiredEnv "CLIENT_SECRET" }}
+          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           keycloak_admin: {{ requiredEnv "KEYCLOAK_ADMIN" }}
-          realm_admin_pw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+          realmAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
 
 ---
 releases:
+  - name: config-data
+    namespace: {{ .Values.namespace }}
+    chart: ./config-data
+    installed: true
+    values:
+      - config-data/values.gotmpl
+
   - name: transparency-api 
-    namespace: aic
+    namespace: {{ .Values.namespace }}
     chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-transparency-chart
     version: "0.0.1"
 
   - name: decision-api 
-    namespace: aic
+    namespace: {{ .Values.namespace }}
     chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-decision-chart
     version: "0.0.1"
 
   - name: aicockpit 
-    namespace: aic
+    namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
     version: "0.0.1"
     values:
       - image:
-          tag: "0.0.1-SNAPSHOT-3"
+          tag: "0.0.1-SNAPSHOT-7"
         app:
           context_path: "/ai-cockpit"
         auth:
-          enabled: false
+          enabled: true
+          keycloakRealmUrlInternal: http://keycloak/realms/aicockpit
+          keycloakRealmUrlExternal: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}/realms/aicockpit
+          clientId: aicockpit
+          clientSecret: {{ .Values.auth.clientSecret }}
         postgresql:
           auth:
             database: aicockpit
@@ -65,12 +76,15 @@ releases:
           tls:
             - hosts:
               - aic.{{ .Values.hostname }}
-              secretName: aic.{{ .Values.hostname }}          
+              secretName: aic.{{ .Values.hostname }}
+#        extraEnv: |
+#          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
+#            value: TRACE
 
   - name: keycloak
-    namespace: aic
+    namespace: {{ .Values.namespace }}
     chart: oci://registry-1.docker.io/bitnamicharts/keycloak
-    installed: false
+    installed: true
     version: "21.0.3"  
     values:
       - httpRelativePath: / # set context path for keycloak console
