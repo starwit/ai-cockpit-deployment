@@ -13,18 +13,18 @@ environments:
         hostname: markus-laptop
         tls: true
         auth:
+          keycloakAdminPw: admin        
           clientSecret: aicockpit
           realmAdminPw: aicockpit
-          keycloak_admin: admin
   aic-dev:
     values:  
       - namespace: aic
         hostname: aic.starwit-infra.de
         tls: true
         auth:
+          keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
-          keycloak_admin: {{ requiredEnv "KEYCLOAK_ADMIN" }}
-          realmAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+          realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
 
 ---
 releases:
@@ -69,13 +69,13 @@ releases:
           enabled: true
           className: traefik
           hosts:
-            - host: aic.{{ .Values.hostname }}
+            - host: cockpit.{{ .Values.hostname }}
               paths:
                 - path: "/ai-cockpit"
                   pathType: ImplementationSpecific
           tls:
             - hosts:
-              - aic.{{ .Values.hostname }}
+              - cockpit.{{ .Values.hostname }}
               secretName: aic.{{ .Values.hostname }}
 #        extraEnv: |
 #          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
@@ -90,7 +90,7 @@ releases:
       - httpRelativePath: / # set context path for keycloak console
         auth:
           adminUser: admin
-          adminPassword: {{ .Values.auth.keycloak_admin }}
+          adminPassword: {{ .Values.auth.keycloakAdminPw }}
         proxy: edge
         extraEnvVars:
           - name: KC_HOSTNAME_URL
