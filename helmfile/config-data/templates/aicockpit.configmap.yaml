@@ -14,7 +14,7 @@ data:
           "secret": "{{ .Values.auth.clientSecret }}",
           "redirectUris": [
             "http{{- if .Values.tls }}s{{- end }}://dashboard.{{ .Values.hostname }}/*",
-            "http{{- if .Values.tls }}s{{- end }}://aic.{{ .Values.hostname }}/*"
+            "http{{- if .Values.tls }}s{{- end }}://cockpit.{{ .Values.hostname }}/*"
           ],
           "webOrigins": [
             "+"
