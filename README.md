@@ -6,6 +6,10 @@ This repository contains tools to deploy all components of AI Cockpit.
 
 Components can be deployed with two tools: Docker Compose and Helmfile. Docker Compose runs all components as Docker images and with Helmfile all components are deployed to a Kubernetes cluster.
 
+The following diagram shows an overview of software components as well as a number of versioned artifacts.
+
+![](doc/DeploymentConcept.drawio.svg)
+
 ### Docker Compose
 
 ```bash
