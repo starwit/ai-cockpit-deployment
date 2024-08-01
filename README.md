@@ -37,6 +37,13 @@ With Helmfile you need a running Kubernetes cluster and your KUBECONFIG variable
     helmfile apply helmfile.yaml -e aic-dev 
 ```
 
+#### Connection to Database
+
+* start pgadmin e.g. via docker compose script in your deployment project and add db connection:
+    * get postgres credentials from kubernetes secrets
+    * use port forwarding (e.g. via k9s) to be able to reach postgres port
+    * get your IP address, e.g. `hostname -I | awk '{print $3}'`
+
 ## Component Breakdown
 The components of Starwit's implementation of AI cockpit can be found in the following repositories:
 
