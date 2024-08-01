@@ -18,11 +18,23 @@ The following diagram shows an overview of software components as well as a numb
 ```
 
 ### Helmfile
+
+#### Establish Environment
+
+* get secrets from bitwarden:
+   * get ssh public and private key
+   * get kubeconfig
+   * use env-template.sh and create env.sh and add it as source in your console
+* use port forwarding to get connection to cluster, e.g.: `ssh -L 16443:localhost:6443 ai-cockpit`
+* check that port forwarding is running e.g. with `kubectl get all --all-namespaces`
+
+#### Execute
+
 With Helmfile you need a running Kubernetes cluster and your KUBECONFIG variable needs to point to an according config. If this is the case, the following command will install all components to namespace _aic_.
 ```bash
     cd helmfile
-    helmfile diff helmfile.yaml # check planned changes
-    helmfile apply helmfile.yaml
+    helmfile diff helmfile.yaml -e aic-dev # check planned changes
+    helmfile apply helmfile.yaml -e aic-dev 
 ```
 
 ## Component Breakdown
