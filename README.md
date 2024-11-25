@@ -12,6 +12,9 @@ The following diagram shows an overview of software components as well as a numb
 
 ### Docker Compose
 
+Docker compose can be used to run a local setup of all components. Compose scripts are explained in detail [here](docker-compose/Readme.md)
+
+TL;DR
 ```bash
     cd docker-compose
     sudo docker compose -f docker-compose.yaml up
