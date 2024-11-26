@@ -39,7 +39,7 @@ services:
       exit 0;
       "
     volumes:
-      - ./scenariodata/binary_data/${binfolder}:/binary_data
+      - ./scenariodata/binary_data/${scenario}:/binary_data
 
 volumes:
   data1-1:

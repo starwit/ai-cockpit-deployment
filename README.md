@@ -17,7 +17,8 @@ Docker compose can be used to run a local setup of all components. Compose scrip
 TL;DR
 ```bash
     cd docker-compose
-    sudo docker compose -f docker-compose.yaml up
+    export scenario=traffic
+    sudo docker compose -f import-demo-docker-compose.yml up
 ```
 
 ### Helmfile
