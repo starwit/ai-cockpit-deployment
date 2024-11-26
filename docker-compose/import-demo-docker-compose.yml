@@ -42,4 +42,4 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: ${datafolder}
+      device: ./scenariodata/data_structures/${scenario}

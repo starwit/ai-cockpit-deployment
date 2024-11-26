@@ -1,0 +1,146 @@
+[
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 2
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-02.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-03.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 2
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 4
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 4
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 6
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 5
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/sample-04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  }
+]
