@@ -41,8 +41,7 @@ With Helmfile you need a running Kubernetes cluster and your KUBECONFIG variable
 
 * start pgadmin e.g. via docker compose script in your deployment project and add db connection:
     * get postgres credentials from kubernetes secrets
-    * get your IP address, e.g. `hostname -I | awk '{print $3}'`
-    * use port forwarding with your ip (e.g. via k9s) to be able to reach postgres port
+    * use port forwarding with ip 0.0.0.0 (e.g. via k9s) to be able to reach postgres port
 
 ## Component Breakdown
 The components of Starwit's implementation of AI cockpit can be found in the following repositories:
