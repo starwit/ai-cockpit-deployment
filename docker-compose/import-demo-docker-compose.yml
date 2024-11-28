@@ -1,6 +1,8 @@
 include: 
   - ./docker-compose-minio.yml
 
+name: ai-cockpit
+
 services:
   postgres:
     image: postgres:latest
