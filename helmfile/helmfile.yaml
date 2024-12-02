@@ -31,6 +31,19 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+  aalen-dev:
+    values:  
+      - namespace: aic
+        hostname: aic.hic.starwit-infra.de
+        tls: true
+        auth:
+          keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
+          realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+        minio:
+          user: minioadmin
+          password: {{ requiredEnv "MINIO_PW" }}
+
 
 ---
 releases:
