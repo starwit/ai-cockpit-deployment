@@ -1,0 +1,146 @@
+[
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/accident01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 2
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/dangerousdrivingbehaviour01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/accident02.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 2
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/dangerousdrivingbehaviour02.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/dangerousdrivingbehaviour03.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/accident02.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 4
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/trafficjam01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 3
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/dangerousdrivingbehaviour04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 1
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/disabled01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 4
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/firstresponderops01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 6
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/firstresponderops01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 5
+    },
+    "mitigationAction": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/trafficjam02.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": null,
+    "trafficIncidentType": {
+      "id": 3
+    },
+    "mitigationAction": []
+  }
+]
