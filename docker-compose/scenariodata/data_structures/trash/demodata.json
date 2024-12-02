@@ -1,8 +1,7 @@
 [
     {
-        "id": 11,
         "acquisitionTime": "2024-11-12T11:16:47Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/weed01.jpg",
         "cameraLatitude": 39.985589,
         "cameraLongitude": -86.131719,
         "state": "NEW",
@@ -14,9 +13,8 @@
         "mitigationAction": []
     },
     {
-        "id": 10,
         "acquisitionTime": "2024-11-12T11:16:36Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/trafficSign01.jpg",
         "cameraLatitude": 39.978309,
         "cameraLongitude": -86.133787,
         "state": "NEW",
@@ -28,9 +26,8 @@
         "mitigationAction": []
     },
     {
-        "id": 7,
         "acquisitionTime": "2024-11-11T18:42:47Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/illegalParking01.jpg",
         "cameraLatitude": 39.985589,
         "cameraLongitude": -86.131719,
         "state": "NEW",
@@ -42,9 +39,8 @@
         "mitigationAction": []
     },
     {
-        "id": 13,
         "acquisitionTime": "2024-11-12T11:17:07Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/illegalParking03.jpg",
         "cameraLatitude": 39.980254,
         "cameraLongitude": -86.143703,
         "state": "NEW",
@@ -56,9 +52,8 @@
         "mitigationAction": []
     },
     {
-        "id": 16,
         "acquisitionTime": "2024-11-12T11:17:37Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/trash03.jpg",
         "cameraLatitude": 39.970734,
         "cameraLongitude": -86.128939,
         "state": "NEW",
@@ -70,9 +65,8 @@
         "mitigationAction": []
     },
     {
-        "id": 17,
         "acquisitionTime": "2024-11-12T11:17:47Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/weed02.jpg",
         "cameraLatitude": 39.974686,
         "cameraLongitude": -86.141046,
         "state": "NEW",
@@ -84,9 +78,8 @@
         "mitigationAction": []
     },
     {
-        "id": 2,
         "acquisitionTime": "2024-10-31T14:59:57Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/weed03.jpg",
         "cameraLatitude": 39.978309,
         "cameraLongitude": -86.133787,
         "state": "NEW",
@@ -98,9 +91,8 @@
         "mitigationAction": []
     },
     {
-        "id": 3,
         "acquisitionTime": "2024-10-31T15:00:08Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/weed04.jpg",
         "cameraLatitude": 39.985589,
         "cameraLongitude": -86.131719,
         "state": "NEW",
@@ -112,9 +104,8 @@
         "mitigationAction": []
     },
     {
-        "id": 12,
         "acquisitionTime": "2024-11-12T11:16:57Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/trash01.mp4",
         "cameraLatitude": 39.97078,
         "cameraLongitude": -86.127168,
         "state": "ACCEPTED",
@@ -126,9 +117,8 @@
         "mitigationAction": []
     },
     {
-        "id": 19,
         "acquisitionTime": "2024-11-12T11:18:07Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/trash02.jpg",
         "cameraLatitude": 39.975163,
         "cameraLongitude": -86.12691,
         "state": "ACCEPTED",
@@ -140,9 +130,8 @@
         "mitigationAction": []
     },
     {
-        "id": 18,
         "acquisitionTime": "2024-11-12T11:17:57Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/trashContainer01.jpg",
         "cameraLatitude": 39.97227,
         "cameraLongitude": -86.151024,
         "state": "ACCEPTED",
@@ -154,9 +143,8 @@
         "mitigationAction": []
     },
     {
-        "id": 4,
         "acquisitionTime": "2024-10-31T15:00:18Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/illegalParking02.jpg",
         "cameraLatitude": 39.97078,
         "cameraLongitude": -86.127168,
         "state": "REJECTED",
@@ -168,9 +156,8 @@
         "mitigationAction": []
     },
     {
-        "id": 6,
         "acquisitionTime": "2024-11-11T18:42:37Z",
-        "mediaUrl": "anomalies/sample-01.mp4",
+        "mediaUrl": "anomalies/trashContainer02.mp4",
         "cameraLatitude": 39.978309,
         "cameraLongitude": -86.133787,
         "state": "NEW",
