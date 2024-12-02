@@ -44,4 +44,4 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: ./scenariodata/data_structures/${scenario}
+      device: ./scenariodata/data_structures/${scenario}-${language}
