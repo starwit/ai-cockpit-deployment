@@ -31,6 +31,18 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+  aalen-dev:
+    values:  
+      - namespace: aic
+        hostname: aic.hic.starwit-infra.de
+        tls: true
+        auth:
+          keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
+          realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+        minio:
+          user: minioadmin
+          password: {{ requiredEnv "MINIO_PW" }}
 
 ---
 releases:
@@ -41,25 +53,15 @@ releases:
     values:
       - config-data/values.gotmpl
 
-  - name: transparency-api 
-    namespace: {{ .Values.namespace }}
-    chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-transparency-chart
-    version: "0.0.1"
-
-  - name: decision-api 
-    namespace: {{ .Values.namespace }}
-    chart: oci://registry-1.docker.io/starwitorg/starwit-aicapi-decision-chart
-    version: "0.0.1"
-
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.1.2"
+    version: "0.1.6"
     values:
       - image:
-          tag: "0.1.2"
+          tag: "0.1.6"
         app:
-          context_path: "/ai-cockpit"
+          context_path: "/"
         auth:
           enabled: true
           keycloakRealmUrlInternal: http://keycloak/realms/aicockpit
@@ -77,7 +79,7 @@ releases:
           hosts:
             - host: cockpit.{{ .Values.hostname }}
               paths:
-                - path: "/ai-cockpit"
+                - path: "/"
                   pathType: ImplementationSpecific
           tls:
             - hosts:
