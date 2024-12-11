@@ -2,6 +2,10 @@ repositories:
   - name: starwitorg
     url: registry-1.docker.io/starwitorg
     oci: true
+  - name: bitnamicharts
+    url: registry-1.docker.io/bitnamicharts
+    oci: true
+  
 
 helmDefaults:
   wait: true
@@ -10,7 +14,7 @@ environments:
   default:
     values:
       - namespace: aic
-        hostname: markus-laptop
+        hostname: anett-thinkpad
         tls: true
         auth:
           keycloakAdminPw: admin        
@@ -19,6 +23,7 @@ environments:
         minio:
           user: minioadmin
           password: minioadmin
+        anomalyProcessing: true
   aic-dev:
     values:  
       - namespace: aic
@@ -31,6 +36,7 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+        anomalyProcessing: false
   aalen-dev:
     values:  
       - namespace: aic
@@ -43,6 +49,7 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+        anomalyProcessing: false
 
 ---
 releases:
@@ -141,3 +148,23 @@ releases:
           selfSigned: {{ eq .Environment.Name "default" }}
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
+
+  - name: valkey
+    installed: {{ .Values.anomalyProcessing }}
+    namespace: {{ .Values.namespace }}
+    chart: bitnamicharts/valkey
+    version: 2.2.0
+    values:
+      - architecture: standalone
+        primary:
+          service:
+            type: NodePort
+            nodePorts:
+              valkey: 30379
+        auth:
+          enabled: false
+        persistence:
+          enabled: false
+        commonConfiguration: |
+          save ""
+          appendonly no
