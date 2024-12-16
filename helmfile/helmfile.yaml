@@ -180,10 +180,19 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.5.0
+    version: 0.7.0
     values:
       - image:
-          tag: 0.5.0
+          tag: 0.1.0
         pullSecret:
           user: "docker"
           password: {{ .Values.pullSecret }}
+        config:
+          minio:
+            user: minioadmin
+            password: {{ .Values.minio.password }}
+          redis:
+            stream_id: stream1
+            input_stream_prefix: anomalydetection
+            output_stream_prefix: reportingaicockpit
+
