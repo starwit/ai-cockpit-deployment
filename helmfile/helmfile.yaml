@@ -180,21 +180,17 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.11.0
+    version: 0.13.3
     values:
-      - anomalyPostProcessing:
-          image:
-            repository: docker.internal.starwit-infra.de/anomaly-post-processing
-            tag: 0.2.0
-          config:
-            log_level: "INFO"
-            minio:
-              user: minioadmin
-              password: {{ .Values.minio.password }}
-            redis:
-              stream_id: stream1
-              input_stream_prefix: anomalydetection
-              output_stream_prefix: reportingaicockpit
+      - config:
+          log_level: INFO
+          minio:
+            user: minioadmin
+            password: {{ .Values.minio.password }}
+          redis:
+            stream_id: stream1
+            input_stream_prefix: anomalydetection
+            output_stream_prefix: reportingaicockpit
         imageCredentials:
           registry: docker.internal.starwit-infra.de
           username: docker
