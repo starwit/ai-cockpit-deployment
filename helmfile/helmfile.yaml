@@ -2,6 +2,14 @@ repositories:
   - name: starwitorg
     url: registry-1.docker.io/starwitorg
     oci: true
+  - name: bitnamicharts
+    url: registry-1.docker.io/bitnamicharts
+    oci: true
+  - name: starwit-internal
+    url: https://helm.internal.starwit-infra.de
+    username: chartmuseum
+    password: {{ env "HELM_SECRET" }}
+ 
 
 helmDefaults:
   wait: true
@@ -10,7 +18,7 @@ environments:
   default:
     values:
       - namespace: aic
-        hostname: markus-laptop
+        hostname: anett-thinkpad
         tls: true
         auth:
           keycloakAdminPw: admin        
@@ -19,6 +27,8 @@ environments:
         minio:
           user: minioadmin
           password: minioadmin
+        anomalyProcessing: true
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aic-dev:
     values:  
       - namespace: aic
@@ -31,6 +41,8 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+        anomalyProcessing: false
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
     values:  
       - namespace: aic
@@ -43,6 +55,8 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+        anomalyProcessing: false
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
 
 ---
 releases:
@@ -141,3 +155,44 @@ releases:
           selfSigned: {{ eq .Environment.Name "default" }}
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
+
+  - name: valkey
+    installed: {{ .Values.anomalyProcessing }}
+    namespace: {{ .Values.namespace }}
+    chart: bitnamicharts/valkey
+    version: 2.2.0
+    values:
+      - architecture: standalone
+        primary:
+          service:
+            type: NodePort
+            nodePorts:
+              valkey: 30379
+        auth:
+          enabled: false
+        persistence:
+          enabled: false
+        commonConfiguration: |
+          save ""
+          appendonly no
+
+  - name: anomaly-post-processing
+    installed: {{ .Values.anomalyProcessing }}
+    namespace: {{ .Values.namespace }}
+    chart: starwit-internal/anomaly-post-processing
+    version: 0.13.3
+    values:
+      - config:
+          log_level: INFO
+          minio:
+            user: minioadmin
+            password: {{ .Values.minio.password }}
+          redis:
+            stream_id: stream1
+            input_stream_prefix: anomalydetection
+            output_stream_prefix: reportingaicockpit
+        imageCredentials:
+          registry: docker.internal.starwit-infra.de
+          username: docker
+          password: {{ .Values.pullSecret }}
+
