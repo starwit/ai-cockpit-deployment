@@ -180,15 +180,18 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.13.3
+    version: 0.13.4
     values:
       - config:
           log_level: INFO
           minio:
+            endpoint: "minio:9000"
             user: minioadmin
             password: {{ .Values.minio.password }}
           redis:
             stream_id: stream1
+            host: valkey-primary
+            port: 6379
             input_stream_prefix: anomalydetection
             output_stream_prefix: reportingaicockpit
         imageCredentials:
