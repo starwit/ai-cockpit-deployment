@@ -103,6 +103,9 @@ releases:
           user: {{ .Values.minio.user }}
           password: {{ .Values.minio.password }}
           endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
+        sbom:
+          enabled: true
+          uri: http://minio.{{ .Values.namespace }}.svc.cluster.local:8080
 
 #        extraEnv: |
 #          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
@@ -180,7 +183,7 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.13.4
+    version: 0.15.3
     values:
       - config:
           log_level: INFO
@@ -199,3 +202,8 @@ releases:
           username: docker
           password: {{ .Values.pullSecret }}
 
+  - name: sbom-generator
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/sbom-generator-chart
+    version: 0.0.9
