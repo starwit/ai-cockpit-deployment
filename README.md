@@ -52,8 +52,9 @@ The components of Starwit's implementation of AI cockpit can be found in the fol
 
 | Component       | Repository / URI                                       | Description |
 | ----------------| -------------------------------------------------------| ----------- |
-| AI Cockpit      |https://github.com/starwit/ai-cockpit                   | Acutal Cockpit|
+| AI Cockpit      |https://github.com/starwit/ai-cockpit                   | Actual Cockpit|
 | Transparency API|https://github.com/starwit/starwit-aic-transparency-api | API for transparency functions|
 | Decision API    |https://github.com/starwit/starwit-aic-decision-api     | API for decision/control interface |
+| sBOM Generator  |https://github.com/starwit/sbom-report-generator        | micro service to generate sbom reports|
 
 For more details about AI Cockpit visit project page: https://www.kicockpit.eu/
