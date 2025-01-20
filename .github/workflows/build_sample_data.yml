@@ -37,7 +37,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: ./docker-compose
-        file: ./dockerfile
+        file: ./docker-compose/dockerfile
         push: true
         tags: |
           ${{ env.DOCKERHUB_ORG }}/${{ env.IMAGE_NAME }}:${{ env.RELEASE_VERSION }}
