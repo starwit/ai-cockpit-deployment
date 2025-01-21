@@ -1,3 +1,8 @@
 FROM alpine:latest
 
 COPY ./scenariodata /scenariodata
+# Download minio client first
+COPY ./minio/mc /bin
+COPY ./sample_data_image/import_binary_data.sh ./bin
+
+RUN chmod +x /bin/import_binary_data.sh
