@@ -41,7 +41,7 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
-        anomalyProcessing: false
+        anomalyProcessing: true
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
     values:  
@@ -70,10 +70,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.1.6"
+    version: "0.1.9"
     values:
       - image:
-          tag: "0.1.6"
+          tag: "0.1.9"
         app:
           context_path: "/"
         auth:
