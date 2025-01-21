@@ -1,0 +1,73 @@
+repositories:
+  - name: starwitorg
+    url: registry-1.docker.io/starwitorg
+    oci: true
+  - name: bitnamicharts
+    url: registry-1.docker.io/bitnamicharts
+    oci: true
+  - name: starwit-internal
+    url: https://helm.internal.starwit-infra.de
+    username: chartmuseum
+    password: {{ env "HELM_SECRET" }}
+
+helmDefaults:
+  wait: true
+
+environments:
+  default:
+    values:
+      - namespace: sae
+        hostname: anett-thinkpad
+        tls: true
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+  aic-dev:
+    values:  
+      - namespace: sae
+        valkey: true
+        tls: true
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+
+---
+releases:
+
+  - name: valkey
+    installed: {{ .Values.valkey }}
+    namespace: {{ .Values.namespace }}
+    chart: bitnamicharts/valkey
+    version: 2.2.0
+    values:
+      - architecture: standalone
+        primary:
+          service:
+            type: NodePort
+            nodePorts:
+              valkey: 30379
+        auth:
+          enabled: false
+        persistence:
+          enabled: false
+        commonConfiguration: |
+          save ""
+          appendonly no
+
+
+  - name: sae-anomaly-detection
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwit-internal/sae-anomaly-detection
+    version: 0.2.9
+    values:
+      - config:
+          log_level: INFO
+          redisIn:
+            stream_id: stream1
+            host: valkey-primary
+            port: 6379
+          redisOut:
+            stream_id: stream1
+            host: 10.0.1.6
+            port: 30379
+        imageCredentials:
+          registry: docker.internal.starwit-infra.de
+          username: docker
+          password: {{ .Values.pullSecret }}
