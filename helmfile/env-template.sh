@@ -1,6 +1,5 @@
 
 export CLIENT_SECRET=aicockpit
-export KEYCLOAK_ADMIN=aicockpit
 export KEYCLOAK_ADMIN_PW=aicockpit
 export KEYCLOAK_REALM_PW=aicockpit
 export MINIO_PW=minioadmin

@@ -44,7 +44,7 @@ environments:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
         sampledata_import: false
-        anomalyProcessing: false
+        anomalyProcessing: true
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
     values:  
