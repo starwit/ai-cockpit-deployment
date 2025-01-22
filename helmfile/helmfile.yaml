@@ -18,15 +18,17 @@ environments:
   default:
     values:
       - namespace: aic
-        hostname: anett-thinkpad
-        tls: true
+        hostname: infra-biggpu
+        tls: false
         auth:
+          enabled: false
           keycloakAdminPw: admin        
           clientSecret: aicockpit
           realmAdminPw: aicockpit
         minio:
           user: minioadmin
           password: minioadmin
+        sampledata_import: true
         anomalyProcessing: true
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aic-dev:
@@ -41,6 +43,7 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+        sampledata_import: false
         anomalyProcessing: false
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
@@ -55,6 +58,7 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
+        sampledata_import: false
         anomalyProcessing: false
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
 
@@ -70,14 +74,14 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.1.6"
+    version: "0.1.10"
     values:
       - image:
-          tag: "0.1.6"
+          tag: "0.1.10"
         app:
-          context_path: "/"
+          context_path: ""
         auth:
-          enabled: true
+          enabled: {{ .Values.auth.enabled}}
           keycloakRealmUrlInternal: http://keycloak/realms/aicockpit
           keycloakRealmUrlExternal: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}/realms/aicockpit
           clientId: aicockpit
@@ -103,9 +107,18 @@ releases:
           user: {{ .Values.minio.user }}
           password: {{ .Values.minio.password }}
           endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
+        sampledata:
+          enabled: {{ .Values.sampledata_import }}
+          importFolder: traffic
+          language: en          
+        aiapi:
+          transparency:
+            enabled: true
+            uri: http://transparency-api-starwit-aicapi-transparency-chart.{{ .Values.namespace }}.svc.cluster.local:8080
         sbom:
           enabled: true
-          uri: http://minio.{{ .Values.namespace }}.svc.cluster.local:8080
+          generator:
+            uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
 
 #        extraEnv: |
 #          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
@@ -206,4 +219,14 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwitorg/sbom-generator-chart
-    version: 0.0.9
+    version: 0.0.10
+
+  - name: transparency-api
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/starwit-aicapi-transparency-chart
+    version: 0.0.6
+    values:
+      - app:
+          context_path: ""
+          service_uri: http://transparency-api-starwit-aicapi-transparency-chart:8080
