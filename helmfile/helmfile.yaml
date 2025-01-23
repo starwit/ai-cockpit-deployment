@@ -37,13 +37,14 @@ environments:
         hostname: aic.starwit-infra.de
         tls: true
         auth:
+          enabled: true
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
-        sampledata_import: false
+        sampledata_import: true
         anomalyProcessing: true
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
@@ -52,6 +53,7 @@ environments:
         hostname: aic.hic.starwit-infra.de
         tls: true
         auth:
+          enabled: true
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
@@ -74,10 +76,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.1.10"
+    version: "0.1.11"
     values:
       - image:
-          tag: "0.1.10"
+          tag: "0.1.11"
         app:
           context_path: ""
         auth:

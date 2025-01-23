@@ -1,0 +1,38 @@
+[
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/DNSBug.jpg",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": "DNS-Auflösung fehlerhaft",
+    "decisionType": {
+      "id": 1
+    },
+    "action": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/FunctionalServiceBug.jpg",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": "Lambdaservice fehlerhaft",
+    "decisionType": {
+      "id": 2
+    },
+    "action": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/FunctionalServiceBug2.jpg",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "Bug in Hauptapplikation",
+    "description": null,
+    "decisionType": {
+      "id": 2
+    },
+    "action": []
+  }
+]
