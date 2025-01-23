@@ -2,8 +2,7 @@
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "actionVisualizationUrl": "anomalies/DatabaseCorrupt_recovery.jpg",
     "state": "NEW",
     "description": "Datenbank fehlerhaft",
     "decisionType": {
@@ -13,9 +12,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "mediaUrl": "anomalies/DNSBug.jpg",
+    "actionVisualizationUrl": "anomalies/DNS_Recovery.jpg",
     "state": "NEW",
     "description": "DNS-Auflösung fehlerhaft",
     "decisionType": {
@@ -26,8 +24,7 @@
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/FunctionalServiceBug.jpg",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "actionVisualizationUrl": "anomalies/FunctionalService_Recovery.jpg",
     "state": "NEW",
     "description": "Lambdaservice fehlerhaft",
     "decisionType": {
@@ -37,9 +34,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/FunctionalServiceBug2.jpg",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "mediaUrl": "anomalies/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Bug in Hauptapplikation",
     "decisionType": {
