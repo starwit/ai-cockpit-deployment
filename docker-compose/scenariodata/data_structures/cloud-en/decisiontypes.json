@@ -1,7 +1,7 @@
 [
     {
-        "name": "Konfigurationsproblem",
-        "description": "Eine Anwendung ist für Kunden nicht erreichbar",
+        "name": "Configuration issue",
+        "description": "Configuration issue prevents customers using application",
         "decision": [],
         "actionType": [
             {
@@ -13,8 +13,8 @@
         ]
     },
     {
-        "name": "Fehlerhafte Daten",
-        "description": "Applikation zeigt fehlerhafte Kundendaten an",
+        "name": "Corrupt data",
+        "description": "Application displays corrupt data to customers",
         "decision": [],
         "actionType": [
             {
@@ -29,8 +29,8 @@
         ]
     },
     {
-        "name": "Anwendungsfehler",
-        "description": "Bug in einer Applikation",
+        "name": "Application bug",
+        "description": "Application bug",
         "decision": [],
         "actionType": [
             {

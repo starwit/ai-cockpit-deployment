@@ -1,7 +1,19 @@
 [
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/DNSBug.jpg",
+    "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": "Datenbank fehlerhaft",
+    "decisionType": {
+      "id": 2
+    },
+    "action": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
     "state": "NEW",
@@ -19,7 +31,7 @@
     "state": "NEW",
     "description": "Lambdaservice fehlerhaft",
     "decisionType": {
-      "id": 2
+      "id": 3
     },
     "action": []
   },
@@ -28,10 +40,10 @@
     "mediaUrl": "anomalies/FunctionalServiceBug2.jpg",
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
-    "state": "Bug in Hauptapplikation",
-    "description": null,
+    "state": "NEW",
+    "description": "Bug in Hauptapplikation",
     "decisionType": {
-      "id": 2
+      "id": 3
     },
     "action": []
   }
