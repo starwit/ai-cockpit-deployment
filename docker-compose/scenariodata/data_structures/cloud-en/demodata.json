@@ -1,11 +1,23 @@
 [
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/DNSBug.jpg",
+    "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
     "state": "NEW",
-    "description": "DNS resolution broken",
+    "description": "Database corrupt",
+    "decisionType": {
+      "id": 2
+    },
+    "action": []
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": "DNS resolution not working",
     "decisionType": {
       "id": 1
     },
@@ -17,9 +29,9 @@
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
     "state": "NEW",
-    "description": "Lambda service not working properly",
+    "description": "Buggy lambda service",
     "decisionType": {
-      "id": 2
+      "id": 3
     },
     "action": []
   },
@@ -28,10 +40,10 @@
     "mediaUrl": "anomalies/FunctionalServiceBug2.jpg",
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
-    "state": "Main application bug",
-    "description": null,
+    "state": "NEW",
+    "description": "Bug in application",
     "decisionType": {
-      "id": 2
+      "id": 3
     },
     "action": []
   }

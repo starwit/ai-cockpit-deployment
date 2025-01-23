@@ -1,55 +1,55 @@
 [
     {
-        "name": "Anwendung in Wartungsmodus",
-        "description": "Applikation wird in Wartungsmodus versetzt und ist nicht mehr für Kunden erreichbar",
+        "name": "Put App to maintenance mode",
+        "description": "Application is set to maintenance mode and is not reachable for customers",
         "executionPolicy": "WITHCHECK",
         "action": []
     },
     {
-        "name": "Anwendung neustarten",
-        "description": "Applikation/Modul wird neugestartet",
+        "name": "Restart Application",
+        "description": "Restart Application/Module",
         "executionPolicy": "WITHCHECK",
         "action": []
     },    
     {
-        "name": "Patch für Applikation/Modul",
-        "description": "Für eine Applikation wird ein Patch programmiert",
+        "name": "Patch Application/Module",
+        "description": "Create patch for application/module",
         "executionPolicy": "MANUAL",
         "action": []
     },
     {
-        "name": "Element-Konfiguration ändern",
-        "description": "Konfiguration eines Cloudelements wird angepasst",
+        "name": "Adapt configuration",
+        "description": "Adapt configuration for a cloud element",
         "executionPolicy": "AUTOMATIC",
         "action": []
     },
     {
-        "name": "Kunden informieren",
-        "description": "Eine Nachricht an alle Kunden senden",
+        "name": "Customer messaging",
+        "description": "Message all customers",
         "executionPolicy": "WITHCHECK",
         "action": []
     },
     {
-        "name": "Datenbank sichern",
-        "description": "Daten werden gesichert",
+        "name": "Backup database",
+        "description": "Create new database backup",
         "executionPolicy": "AUTOMATIC",
         "action": []
     },
     {
-        "name": "Datenbanksicherung einspielen",
-        "description": "Daten werden zurück gespielt",
+        "name": "Recover database backup",
+        "description": "Recover database backup",
         "executionPolicy": "AUTOMATIC",
         "action": []
     },
     {
-        "name": "Loglevel erhöhen",
-        "description": "Loglevel wird erhöht",
+        "name": "Increase log level",
+        "description": "Increase log level",
         "executionPolicy": "AUTOMATIC",
         "action": []
     },
     {
-        "name": "Loglevel veringern",
-        "description": "Loglevel wird veringert",
+        "name": "Decrease log level",
+        "description": "Decrease log level",
         "executionPolicy": "AUTOMATIC",
         "action": []
     }
