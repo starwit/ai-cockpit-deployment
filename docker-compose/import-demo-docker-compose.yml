@@ -4,6 +4,15 @@ include:
 name: ai-cockpit
 
 services:
+  transparency-api:
+    image: starwitorg/starwit-aicapi-transparency:0.0.6
+    environment:
+      APP_SERVICE_URI: http://transparency-api:8080
+      SERVER_SERVLET_CONTEXT_PATH: ""
+  
+  sbom-generator:
+    image: starwitorg/sbom-generator:0.0.10
+
   postgres:
     image: postgres:latest
     environment:
@@ -22,7 +31,7 @@ services:
       - "5433:5432"
 
   aicockpit:
-    image: starwitorg/ai-cockpit:0.1.6
+    image: starwitorg/ai-cockpit:0.1.12
     environment:
       SPRING_PROFILES_ACTIVE: dev
       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/ai-cockpit"
@@ -31,6 +40,10 @@ services:
       MINIO_USER: minioadmin
       MINIO_PASSWORD: minioadmin
       MINIO_ENDPOINT: http://minio1:9000
+      SBOM_ENABLED: true
+      SBOM_GENERATOR_URI: http://sbom-generator:8080
+      AIAPI_TRANSPARENCY_ENABLED: true
+      AIAPI_TRANSPARENCY_URI: http://transparency-api:8080
       SCENARIO_SETUP: true
     volumes:
       - demodata:/scenariodata/traffic
