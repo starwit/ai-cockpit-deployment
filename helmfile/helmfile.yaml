@@ -18,8 +18,9 @@ environments:
   default:
     values:
       - namespace: aic
-        hostname: infra-biggpu
+        hostname: aicockpit.local
         tls: false
+        landing_page: true
         auth:
           enabled: false
           keycloakAdminPw: admin        
@@ -36,6 +37,7 @@ environments:
       - namespace: aic
         hostname: aic.starwit-infra.de
         tls: true
+        landing_page: true
         auth:
           enabled: true
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
@@ -52,6 +54,7 @@ environments:
       - namespace: aic
         hostname: aic.hic.starwit-infra.de
         tls: true
+        landing_page: false
         auth:
           enabled: true
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
@@ -72,6 +75,21 @@ releases:
     installed: true
     values:
       - config-data/values.gotmpl
+
+  - name: landing-page
+    namespace: {{ .Values.namespace }}
+    chart: oci://registry-1.docker.io/bitnamicharts/apache
+    version: 11.3.2
+    installed: {{ .Values.landing_page}}
+    values:
+      - cloneHtdocsFromGit:
+          enabled: true
+          repository: https://github.com/starwit/ai-cockpit-landing-page.git
+          branch: main
+        ingress:
+          enabled: true
+          hostname: {{ .Values.hostname }}
+          tls: false 
 
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
