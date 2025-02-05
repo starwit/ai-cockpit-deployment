@@ -63,3 +63,12 @@ The components of Starwit's implementation of AI cockpit can be found in the fol
 
 
 For more details about AI Cockpit visit project page: https://www.kicockpit.eu/
+
+## Contact & Contribution
+This project was partly funded by the government of the federal republic of Germany. It is part of a research project aiming to keep _humans in command_ and is organized by the Federal Ministry of Labour and Social Affairs.
+
+![BMAS](doc/BMAS_Logo.svg)
+
+# License
+
+Software in this repository is licensed under the AGPL-3.0 license. See [license agreement](LICENSE) for more details.
