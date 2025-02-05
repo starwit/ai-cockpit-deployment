@@ -94,10 +94,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.1.11"
+    version: "0.1.17"
     values:
       - image:
-          tag: "0.1.11"
+          tag: "0.1.17"
         app:
           context_path: ""
         auth:
@@ -245,7 +245,7 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwitorg/starwit-aicapi-transparency-chart
-    version: 0.0.6
+    version: 0.1.1
     values:
       - app:
           context_path: ""
