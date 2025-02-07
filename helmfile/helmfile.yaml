@@ -86,18 +86,26 @@ releases:
           enabled: true
           repository: https://github.com/starwit/ai-cockpit-landing-page.git
           branch: main
+        service:
+          ports:
+            http: 3080
+            https: 3443
         ingress:
           enabled: true
           hostname: {{ .Values.hostname }}
-          tls: false 
+          tls: true
+          selfSigned: false
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+            traefik.ingress.kubernetes.io/router.tls: "true"         
 
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.1.17"
+    version: "0.2.1"
     values:
       - image:
-          tag: "0.1.17"
+          tag: "0.2.1-kic"
         app:
           context_path: ""
         auth:
