@@ -128,7 +128,7 @@ releases:
       - cloneHtdocsFromGit:
           enabled: true
           repository: https://github.com/starwit/ai-cockpit-landing-page.git
-          branch: main
+          branch: layout-styling
         service:
           ports:
             http: 3080
@@ -145,10 +145,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.1"
+    version: "0.2.2"
     values:
       - image:
-          tag: "0.2.1-kic"
+          tag: "0.2.2-kic"
         app:
           context_path: ""
         auth:
