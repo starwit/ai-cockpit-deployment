@@ -46,8 +46,51 @@ environments:
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
-        sampledata_import: true
+        sampledata: 
+          enabled: true
+          importFolder: traffic
+          language: en
         anomalyProcessing: true
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+  aic-dev-trash:
+    values:  
+      - namespace: aic-trash
+        hostname: trash.aic.starwit-infra.de
+        tls: true
+        landing_page: false
+        auth:
+          enabled: true
+          keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
+          realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+        minio:
+          user: minioadmin
+          password: {{ requiredEnv "MINIO_PW" }}
+        sampledata: 
+          enabled: true
+          importFolder: trash
+          language: en
+        anomalyProcessing: false
+        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+  aic-dev-cloud:
+    values:  
+      - namespace: aic-cloud
+        hostname: cloud.aic.starwit-infra.de
+        tls: true
+        landing_page: false
+        auth:
+          enabled: true
+          keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
+          realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+        minio:
+          user: minioadmin
+          password: {{ requiredEnv "MINIO_PW" }}
+        sampledata: 
+          enabled: true
+          importFolder: cloud
+          language: en
+        anomalyProcessing: false
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
     values:  
@@ -136,9 +179,9 @@ releases:
           password: {{ .Values.minio.password }}
           endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
         sampledata:
-          enabled: {{ .Values.sampledata_import }}
-          importFolder: traffic
-          language: en          
+          enabled: {{ .Values.sampledata.enabled }}
+          importFolder: {{ .Values.sampledata.importFolder }}
+          language: {{ .Values.sampledata.language }}
         aiapi:
           transparency:
             enabled: true
@@ -182,6 +225,10 @@ releases:
         keycloakConfigCli:
           enabled: true
           existingConfigmap: aicockpit    
+        # try to squeeze more instances on one server
+        resources:
+          requests:
+            cpu: 100m
 
   - name: minio
     namespace: {{ .Values.namespace }}
