@@ -9,9 +9,13 @@ services:
     environment:
       APP_SERVICE_URI: http://transparency-api:8080
       SERVER_SERVLET_CONTEXT_PATH: ""
+    ports:
+      - "8081:8080"
   
   sbom-generator:
     image: starwitorg/sbom-generator:0.0.10
+    ports:
+      - "8082:8080"
 
   postgres:
     image: postgres:latest
@@ -31,7 +35,7 @@ services:
       - "5433:5432"
 
   aicockpit:
-    image: starwitorg/ai-cockpit:0.2.2-kic
+    image: starwitorg/ai-cockpit:0.2.3-kic
     environment:
       SPRING_PROFILES_ACTIVE: dev
       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/ai-cockpit"
@@ -49,6 +53,8 @@ services:
       - demodata:/scenariodata/traffic
     ports:
       - 8080:8081
+    expose:
+      - "8080"
 
 volumes:
   db:
