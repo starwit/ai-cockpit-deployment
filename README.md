@@ -58,8 +58,8 @@ The components of Starwit's implementation of AI cockpit can be found in the fol
 | sBOM Generator  |https://github.com/starwit/sbom-report-generator        | micro service to generate sbom reports|
 | Landing page    |https://github.com/starwit/ai-cockpit-landing-page      | Landing page for multiple cockpit deployments |
 | AI Cockpit Runner |https://github.com/starwit/ai-cockpit-runner          | Windows app, that runs Cockpit with selected demo data |
-
-
+| Alert viewer    | https://github.com/starwit/alert-viewer                | Web app to display status of action executions |
+| Action Executor | https://github.com/starwit/ai-cockpit-action-demo      | Sample action executor, including hardware triggering |
 
 
 For more details about AI Cockpit visit project page: https://www.kicockpit.eu/
