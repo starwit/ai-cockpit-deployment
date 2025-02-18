@@ -50,16 +50,16 @@ With Helmfile you need a running Kubernetes cluster and your KUBECONFIG variable
 ## Component Breakdown
 The components of Starwit's implementation of AI cockpit can be found in the following repositories:
 
-| Component       | Repository / URI                                       | Description |
-| ----------------| -------------------------------------------------------| ----------- |
-| AI Cockpit      |https://github.com/starwit/ai-cockpit                   | Actual Cockpit|
-| Class library   |https://github.com/starwit/starwit-aic-api              | Data structures to use APIs |
-| Transparency API|https://github.com/starwit/starwit-aic-transparency-api | API for transparency functions, holds module information|
-| sBOM Generator  |https://github.com/starwit/sbom-report-generator        | micro service to generate sbom reports|
-| Landing page    |https://github.com/starwit/ai-cockpit-landing-page      | Landing page for multiple cockpit deployments |
-| AI Cockpit Runner |https://github.com/starwit/ai-cockpit-runner          | Windows app, that runs Cockpit with selected demo data |
-| Alert viewer    | https://github.com/starwit/alert-viewer                | Web app to display status of action executions |
-| Action Executor | https://github.com/starwit/ai-cockpit-action-demo      | Sample action executor, including hardware triggering |
+| Component       | Repository / URI                                        | Description | Docker image | Helm Chart |
+| ----------------| --------------------------------------------------------| ----------- | ------------ |----------- |
+| AI Cockpit      | https://github.com/starwit/ai-cockpit                   | Actual Cockpit| [Link](https://hub.docker.com/r/starwitorg/ai-cockpit)   | [Link](https://hub.docker.com/r/starwitorg/ai-cockpit-chart) |
+| Class library   | https://github.com/starwit/starwit-aic-api              | Data structures to use APIs | --   | --   |
+| Transparency API| https://github.com/starwit/starwit-aic-transparency-api | API for transparency functions, holds module information| [Link](https://hub.docker.com/r/starwitorg/starwit-aicapi-transparency)   | [Link](https://hub.docker.com/r/starwitorg/starwit-aicapi-transparency-chart)   |
+| sBOM Generator  | https://github.com/starwit/sbom-report-generator        | micro service to generate sbom reports| [Link](https://hub.docker.com/r/starwitorg/sbom-generator)   | [Link](https://hub.docker.com/r/starwitorg/sbom-generator-chart)   |
+| Landing page    | https://github.com/starwit/ai-cockpit-landing-page      | Landing page for multiple cockpit deployments | --  | --  |
+| AI Cockpit Runner |https://github.com/starwit/ai-cockpit-runner           | Windows app, that runs Cockpit with selected demo data | --   | --   |
+| Alert viewer    | https://github.com/starwit/alert-viewer                 | Web app to display status of action executions | [Link]()   | [Link]()   |
+| Action Executor | https://github.com/starwit/ai-cockpit-action-demo       | Sample action executor, including hardware triggering | [Link](https://hub.docker.com/r/starwitorg/ai-cockpit-action-demo)   | [Link](https://hub.docker.com/r/starwitorg/ai-cockpit-action-demo-chart)   |
 
 
 For more details about AI Cockpit visit project page: https://www.kicockpit.eu/
