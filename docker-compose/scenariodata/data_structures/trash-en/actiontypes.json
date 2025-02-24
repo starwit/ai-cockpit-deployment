@@ -2,26 +2,46 @@
   {
     "name": "Notify Public Order Office",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Generate Task List and Route",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Notify Towing Service",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Notify Parks Department",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Notify Patrol Vehicle",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   }
 ]

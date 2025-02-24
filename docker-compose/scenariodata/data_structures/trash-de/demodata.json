@@ -7,7 +7,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 2,
             "name": "Wildkrautbewuchs"
         },
         "action": []
@@ -20,7 +19,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 1,
             "name": "Verunreinigte Verkehrsschilder"
         },
         "action": []
@@ -33,7 +31,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 5,
             "name": "Falschparker"
         },
         "action": []
@@ -46,7 +43,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 5,
             "name": "Falschparker"
         },
         "action": []
@@ -59,7 +55,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 4,
             "name": "Müllablagerung"
         },
         "action": []
@@ -72,7 +67,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 2,
             "name": "Wildkrautbewuchs"
         },
         "action": []
@@ -85,7 +79,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 2,
             "name": "Wildkrautbewuchs"
         },
         "action": []
@@ -98,7 +91,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 2,
             "name": "Wildkrautbewuchs"
         },
         "action": []
@@ -111,7 +103,6 @@
         "state": "ACCEPTED",
         "description": "",
         "decisionType": {
-            "id": 4,
             "name": "Müllablagerung"
         },
         "action": []
@@ -124,7 +115,6 @@
         "state": "ACCEPTED",
         "description": "",
         "decisionType": {
-            "id": 4,
             "name": "Müllablagerung"
         },
         "action": []
@@ -137,7 +127,6 @@
         "state": "ACCEPTED",
         "description": "",
         "decisionType": {
-            "id": 3,
             "name": "Überfüllter Müllbehälter"
         },
         "action": []
@@ -150,7 +139,6 @@
         "state": "REJECTED",
         "description": "",
         "decisionType": {
-            "id": 5,
             "name": "Falschparker"
         },
         "action": []
@@ -163,7 +151,6 @@
         "state": "NEW",
         "description": "",
         "decisionType": {
-            "id": 3,
             "name": "Überfüllter Müllbehälter"
         },
         "action": []

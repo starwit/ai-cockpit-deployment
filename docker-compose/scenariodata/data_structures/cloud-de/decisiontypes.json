@@ -5,12 +5,15 @@
         "decision": [],
         "actionType": [
             {
-                "id": 1
+                "name": "Anwendung in Wartungsmodus"
             },
             {
-                "id": 4
+                "name": "Element-Konfiguration ändern"
             }
-        ]
+        ],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Fehlerhafte Daten",
@@ -18,15 +21,18 @@
         "decision": [],
         "actionType": [
             {
-                "id": 1
+                "name": "Anwendung in Wartungsmodus"
             },
             {
-                "id": 7
+                "name": "Datenbanksicherung einspielen"
             },
             {
-                "id": 8
+                "name": "Loglevel erhöhen"
             }
-        ]
+        ],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Anwendungsfehler",
@@ -34,17 +40,20 @@
         "decision": [],
         "actionType": [
             {
-                "id": 1
+                "name": "Anwendung in Wartungsmodus"
             },
             {
-                "id": 3
+                "name": "Patch für Applikation/Modul"
             },
             {
-                "id": 7
+                "name": "Datenbanksicherung einspielen"
             },
             {
-                "id": 2
+                "name": "Anwendung neustarten"
             }
-        ]
+        ],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     }
 ]

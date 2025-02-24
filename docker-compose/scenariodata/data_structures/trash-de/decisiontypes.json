@@ -4,47 +4,62 @@
     "description": "Verkehrsschild kann nicht mehr erkannt werden und Säuberung muss veranlasst werden",
     "actionType": [
       {
-        "id": 5
+        "name": "Einsatzwagen benachrichtigen"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Wildkrautbewuchs",
     "description": "Wildkaut auf Gehweg oder am Straßenrand",
     "actionType": [
       {
-        "id": 4
+        "name": "Grünflächenamt benachrichtigen"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Überfüllter Müllbehälter",
     "description": "Müll liegt bereits neben den Müllbehälter",
     "actionType": [
       {
-        "id": 5
+        "name": "Einsatzwagen benachrichtigen"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Müllablagerung",
     "description": "unbefugte Ablagerung von Sperrmüll oder anderer Müllhaufen",
     "actionType": [
       {
-        "id": 5
+        "name": "Einsatzwagen benachrichtigen"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Falschparker",
     "description": "Falschparker behindert die Müllabfuhr und muss abgeschleppt werden",
     "actionType": [
       {
-        "id": 1
+        "name": "Ordnungsamt benachrichtigen"
       },
       {
-        "id": 3
+        "name": "Abschleppdienst benachrichtigen"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   }
 ]

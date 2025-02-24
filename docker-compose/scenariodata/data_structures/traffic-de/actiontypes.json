@@ -3,30 +3,45 @@
         "name": "Polizei benachrichtigen",
         "description": "Die Polizei über den Verkehrsvorfall informieren",
         "executionPolicy": "WITHCHECK",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Rettungsdienste benachrichtigen",
         "description": "Rettungsdienste wie Krankenwagen oder Feuerwehr benachrichtigen",
         "executionPolicy": "MANUAL",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Öffentliche Alarmeinrichtungen benachrichtigen",
         "description": "Öffentliche Plattformen oder Apps über den Verkehrsvorfall informieren",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "I2X-Benachrichtigung",
         "description": "Eine Nachricht von der Infrastruktur zu X senden",
         "executionPolicy": "WITHCHECK",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Abschleppdienst benachrichtigen",
         "description": "Liegengebliebene Fahrzeuge oder Hindernisse entfernen lassen",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     }
 ]

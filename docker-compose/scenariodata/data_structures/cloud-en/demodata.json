@@ -6,7 +6,7 @@
     "state": "NEW",
     "description": "Database corrupt",
     "decisionType": {
-      "id": 2
+      "name": "Corrupt data"
     },
     "action": []
   },
@@ -17,7 +17,7 @@
     "state": "NEW",
     "description": "DNS resolution not working",
     "decisionType": {
-      "id": 1
+      "name": "Configuration issue"
     },
     "action": []
   },
@@ -28,7 +28,7 @@
     "state": "NEW",
     "description": "Buggy lambda service",
     "decisionType": {
-      "id": 3
+      "name": "Application bug"
     },
     "action": []
   },
@@ -39,7 +39,7 @@
     "state": "NEW",
     "description": "Bug in application",
     "decisionType": {
-      "id": 3
+      "name": "Application bug"
     },
     "action": []
   }

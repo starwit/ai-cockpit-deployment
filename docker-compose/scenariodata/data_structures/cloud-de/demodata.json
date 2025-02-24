@@ -6,7 +6,7 @@
     "state": "NEW",
     "description": "Datenbank fehlerhaft",
     "decisionType": {
-      "id": 2
+      "name": "Fehlerhafte Daten"
     },
     "action": []
   },
@@ -17,7 +17,7 @@
     "state": "NEW",
     "description": "DNS-Auflösung fehlerhaft",
     "decisionType": {
-      "id": 1
+      "name": "Konfigurationsproblem"
     },
     "action": []
   },
@@ -28,7 +28,7 @@
     "state": "NEW",
     "description": "Lambdaservice fehlerhaft",
     "decisionType": {
-      "id": 3
+      "name": "Anwendungsfehler"
     },
     "action": []
   },
@@ -39,7 +39,7 @@
     "state": "NEW",
     "description": "Bug in Hauptapplikation",
     "decisionType": {
-      "id": 3
+      "name": "Anwendungsfehler"
     },
     "action": []
   }
