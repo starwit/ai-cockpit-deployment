@@ -8,7 +8,7 @@ repositories:
   - name: starwit-internal
     url: https://helm.internal.starwit-infra.de
     username: chartmuseum
-    password: {{ env "HELM_SECRET" }}
+    password: {{ requiredEnv "HELM_SECRET" }}
 
 helmDefaults:
   wait: true
@@ -16,20 +16,15 @@ helmDefaults:
 environments:
   default:
     values:
-      - namespace: sae
-        hostname: anett-thinkpad
-        tls: true
-        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+      - namespace: temp
+        valkey: true
   aic-dev:
-    values:  
+    values:
       - namespace: sae
         valkey: true
-        tls: true
-        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
 
 ---
 releases:
-
   - name: valkey
     installed: {{ .Values.valkey }}
     namespace: {{ .Values.namespace }}
@@ -38,18 +33,30 @@ releases:
     values:
       - architecture: standalone
         primary:
-          service:
-            type: NodePort
-            nodePorts:
-              valkey: 30379
+          persistence:
+            enabled: false
+          resources:
+            requests:
+              memory: 512Mi
+              cpu: 100m
+            limits:
+              memory: 1024Mi
+              cpu: 200m
         auth:
-          enabled: false
-        persistence:
           enabled: false
         commonConfiguration: |
           save ""
           appendonly no
 
+  - name: sae-dump-player
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/sae-dump-player-chart
+    version: 0.2.0
+    values:
+      - config:
+          redisHost: valkey-primary
+          redisPort: 6379
 
   - name: sae-anomaly-detection
     installed: true
@@ -70,4 +77,4 @@ releases:
         imageCredentials:
           registry: docker.internal.starwit-infra.de
           username: docker
-          password: {{ .Values.pullSecret }}
+          password: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
