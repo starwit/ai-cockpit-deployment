@@ -35,7 +35,7 @@ services:
       - "5433:5432"
 
   aicockpit:
-    image: starwitorg/ai-cockpit:0.2.3-kic
+    image: starwitorg/ai-cockpit:0.2.5-kic
     environment:
       SPRING_PROFILES_ACTIVE: dev
       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/ai-cockpit"
