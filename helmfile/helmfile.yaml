@@ -8,7 +8,7 @@ repositories:
   - name: starwit-internal
     url: https://helm.internal.starwit-infra.de
     username: chartmuseum
-    password: {{ env "HELM_SECRET" }}
+    password: {{ requiredEnv "HELM_SECRET" }}
  
 
 helmDefaults:
@@ -145,10 +145,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.2"
+    version: "0.2.5"
     values:
       - image:
-          tag: "0.2.2-kic"
+          tag: "0.2.5-kic"
         app:
           context_path: ""
         auth:

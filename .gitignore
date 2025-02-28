@@ -1,3 +1,4 @@
 env.sh
 helmfile/local.env.sh
 helmfile/aalen.env.sh
+helmfile/nexus.env.sh
