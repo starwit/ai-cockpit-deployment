@@ -109,6 +109,9 @@ environments:
         sampledata_import: false
         anomalyProcessing: false
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+  hannover-demo:
+    values:
+      - environments/hannover-demo.yaml.gotmpl
 
 ---
 releases:

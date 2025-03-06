@@ -1,0 +1,19 @@
+namespace: aic
+hostname: aic.dev-laptop01
+tls: true
+landing_page: false
+auth:
+  enabled: false
+  keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
+  clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
+  realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+minio:
+  user: minioadmin
+  password: {{ requiredEnv "MINIO_PW" }}
+sampledata: 
+  enabled: true
+  importFolder: traffic
+  language: en  
+sampledata_import: false
+anomalyProcessing: false
+pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
