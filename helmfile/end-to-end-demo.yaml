@@ -1,0 +1,210 @@
+repositories:
+  - name: starwitorg
+    url: registry-1.docker.io/starwitorg
+    oci: true
+  - name: bitnamicharts
+    url: registry-1.docker.io/bitnamicharts
+    oci: true
+  - name: starwit-internal
+    url: https://helm.internal.starwit-infra.de
+    username: chartmuseum
+    password: {{ requiredEnv "HELM_SECRET" }}
+
+helmDefaults:
+  wait: true
+
+environments:
+  default:
+    values:
+      - namespace: temp
+        hostname: messe-demo.local
+        minio:
+          user: minioadmin
+          password: minioadmin
+        pullSecret: {{ requiredEnv "PULL_SECRET" }}
+  hannover-demo:
+    values:
+      - namespace: aic
+        hostname: aic.dev-laptop01
+        minio:
+          user: minioadmin
+          password: minioadmin
+        pullSecret: {{ requiredEnv "PULL_SECRET" }}
+
+        
+---
+releases:
+  - name: aicockpit 
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/ai-cockpit-chart
+    version: "0.2.8"
+    values:
+      - app:
+          context_path: ""
+        postgresql:
+          auth:
+            database: aicockpit
+            username: aicockpit
+            password: aicockpit
+        ingress:
+          enabled: true
+          className: traefik
+          hosts:
+            - host: cockpit.{{ .Values.hostname }}
+              paths:
+                - path: "/"
+                  pathType: ImplementationSpecific
+        minio:
+          user: {{ .Values.minio.user }}
+          password: {{ .Values.minio.password }}
+          endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
+        sampledata:
+          enabled: true
+          image: starwitorg/ai-cockpit-sampledata:latest
+          importFolder: traffic
+          language: en
+        extraEnv: |
+          - name: SPRING_DATA_REDIS_ACTIVE
+            value: "true"
+          - name: SPRING_DATA_STREAM_PREFIX
+            value: reportingaicockpit
+          - name: SPRING_DATA_REDIS_HOST
+            value: valkey-primary
+          - name: SPRING_DATA_REDIS_PORT
+            value: "6379"
+          - name: SPRING_DATA_REDIS_STREAM_IDS
+            value: stream1
+          - name: INCIDENT_TYPE_DEFAULT
+            value: "dangerous driving behaviour"
+          - name: SPRING_AUTOCONFIGURE_EXCLUDE
+            value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+  - name: minio
+    namespace: {{ .Values.namespace }}
+    chart: oci://registry-1.docker.io/bitnamicharts/minio
+    installed: true
+    version: "14.8.5"  
+    values:
+      - auth:
+          rootUser: {{ .Values.minio.user }}
+          rootPassword: {{ .Values.minio.password }}
+      - ingress:
+          enabled: true
+          hostname: minio.{{ .Values.hostname }}
+          tls: false
+
+  - name: anomaly-post-processing
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwit-internal/anomaly-post-processing
+    version: 0.16.2
+    values:
+      - config:
+          log_level: INFO
+          minio:
+            endpoint: "minio:9000"
+            user: {{ .Values.minio.user }}
+            password: {{ .Values.minio.password }}
+            secure: false
+          redis:
+            stream_id: stream1
+            host: valkey-primary
+            port: 6379
+            input_stream_prefix: anomalydetection
+            output_stream_prefix: reportingaicockpit
+        imageCredentials:
+          registry: docker.internal.starwit-infra.de
+          username: docker
+          password: {{ .Values.pullSecret }}
+
+  - name: valkey
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: bitnamicharts/valkey
+    version: 2.2.0
+    values:
+      - architecture: standalone
+        primary:
+          persistence:
+            enabled: false
+          resources:
+            requests:
+              memory: 512Mi
+              cpu: 100m
+            limits:
+              memory: 1024Mi
+              cpu: 200m
+        auth:
+          enabled: false
+        commonConfiguration: |
+          save ""
+          appendonly no
+
+  - name: sae-dump-player
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/sae-dump-player-chart
+    version: 0.2.0
+    values:
+      - config:
+          redisHost: valkey-primary
+          redisPort: 6379
+
+  - name: anomaly-detection-legacy
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwit-internal/anomaly-detection-legacy
+    version: 4.2.0
+    values:
+      - imageCredentials:
+          registry: docker.internal.starwit-infra.de
+          username: docker
+          password: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+        extraEnv:
+          - name: SIGNIFICANT_MOVEMENT
+            value: "0.004"
+          - name: REDIS_HOST
+            value: valkey-primary
+          - name: REDIS_PORT
+            value: "6379"
+          - name: REDIS_STREAM_IDS
+            value: stream1
+          - name: REDIS_INPUT_STREAM_PREFIX
+            value: geomapper
+          - name: REDIS_OUTPUT_STREAM_PREFIX
+            value: anomalydetection
+          - name: PATH_TO_MODEL_JSON
+            value: models/RangelineSMedicalDr_2024-04-22.json
+          - name: ANOMALY_THRESHOLD
+            value: "0.00005"
+          - name: ANOMALY_POSITION_ENABLED
+            value: "true"
+          - name: MAX_Z_SCORE
+            value: "10"
+          - name: STORE_WHOLE_VIDEO
+            value: "false"
+          - name: ENABLE_LOCAL_OUTPUT
+            value: "false"
+          - name: ENABLE_REDIS_OUTPUT
+            value: "true"
+
+  - name: sae-anomaly-detection
+    installed: false
+    namespace: {{ .Values.namespace }}
+    chart: starwit-internal/sae-anomaly-detection
+    version: 0.3.2
+    values:
+      - config:
+          log_level: DEBUG
+          redisIn:
+            stream_id: stream1
+            host: valkey-primary
+            port: 6379
+          redisOut:
+            stream_id: stream1
+            host: 10.0.1.6
+            port: 30379
+        imageCredentials:
+          registry: docker.internal.starwit-infra.de
+          username: docker
+          password: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
