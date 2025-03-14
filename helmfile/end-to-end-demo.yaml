@@ -97,7 +97,7 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.16.2
+    version: 1.0.0
     values:
       - config:
           log_level: INFO
@@ -106,16 +106,20 @@ releases:
             user: {{ .Values.minio.user }}
             password: {{ .Values.minio.password }}
             secure: false
-          redis:
-            stream_id: stream1
+          redis_input:
             host: valkey-primary
             port: 6379
-            input_stream_prefix: anomalydetection
-            output_stream_prefix: reportingaicockpit
-        imageCredentials:
-          registry: docker.internal.starwit-infra.de
-          username: docker
-          password: {{ .Values.pullSecret }}
+            stream_ids: 
+              - medical
+              - citycenter
+            stream_prefix: anomalydetection
+          redis_output:
+            host: valkey-primary
+            port: 6379
+            stream_id: stream1
+            stream_prefix: reportingaicockpit
+        extraImagePullSecrets:
+          - name: internal-docker-registry
 
   - name: valkey
     installed: true
@@ -150,11 +154,11 @@ releases:
           redisHost: valkey-primary
           redisPort: 6379
 
-  - name: anomaly-detection-legacy
+  - name: anomaly-detection-legacy-medical
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-detection-legacy
-    version: 4.2.0
+    version: 4.2.1
     values:
       - imageCredentials:
           registry: docker.internal.starwit-infra.de
@@ -168,13 +172,49 @@ releases:
           - name: REDIS_PORT
             value: "6379"
           - name: REDIS_STREAM_IDS
-            value: stream1
+            value: medical
           - name: REDIS_INPUT_STREAM_PREFIX
             value: geomapper
           - name: REDIS_OUTPUT_STREAM_PREFIX
             value: anomalydetection
           - name: PATH_TO_MODEL_JSON
             value: models/RangelineSMedicalDr_2024-04-22.json
+          - name: ANOMALY_THRESHOLD
+            value: "0.00005"
+          - name: ANOMALY_POSITION_ENABLED
+            value: "true"
+          - name: MAX_Z_SCORE
+            value: "10"
+          - name: STORE_WHOLE_VIDEO
+            value: "false"
+          - name: ENABLE_LOCAL_OUTPUT
+            value: "false"
+          - name: ENABLE_REDIS_OUTPUT
+            value: "true"
+
+  - name: anomaly-detection-legacy-citycenter
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwit-internal/anomaly-detection-legacy
+    version: 4.2.1
+    values:
+      - extraImagePullSecrets:
+        - name: internal-docker-registry
+        extraEnv:
+          - name: SIGNIFICANT_MOVEMENT
+            value: "0.004"
+          - name: REDIS_HOST
+            value: valkey-primary
+          - name: REDIS_PORT
+            value: "6379"
+          - name: REDIS_STREAM_IDS
+            value: citycenter
+          - name: REDIS_INPUT_STREAM_PREFIX
+            value: geomapper
+          - name: REDIS_OUTPUT_STREAM_PREFIX
+            value: anomalydetection
+          - name: PATH_TO_MODEL_JSON
+            value: models/RangelineCityCenterSB_2024-11-28.json
           - name: ANOMALY_THRESHOLD
             value: "0.00005"
           - name: ANOMALY_POSITION_ENABLED
