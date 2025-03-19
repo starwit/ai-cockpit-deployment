@@ -37,7 +37,7 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.8"
+    version: "0.2.9-2"
     values:
       - app:
           context_path: ""
