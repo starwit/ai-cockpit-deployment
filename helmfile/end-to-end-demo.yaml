@@ -37,7 +37,7 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.9-2"
+    version: "0.2.9-3"
     values:
       - app:
           context_path: ""
@@ -63,6 +63,14 @@ releases:
           image: starwitorg/ai-cockpit-sampledata:latest
           importFolder: traffic
           language: en
+        aiapi:
+          transparency:
+            enabled: true
+            uri: http://transparency-api-starwit-aicapi-transparency-chart.{{ .Values.namespace }}.svc.cluster.local:8080
+        sbom:
+          enabled: true
+          generator:
+            uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
         extraEnv: |
           - name: SPRING_DATA_REDIS_ACTIVE
             value: "true"
@@ -78,6 +86,8 @@ releases:
             value: "dangerous driving behaviour"
           - name: SPRING_AUTOCONFIGURE_EXCLUDE
             value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+          - name: DECISION_TYPE_RANDOM
+            value: "true"
 
   - name: minio
     namespace: {{ .Values.namespace }}
@@ -248,3 +258,19 @@ releases:
           registry: docker.internal.starwit-infra.de
           username: docker
           password: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+
+  - name: sbom-generator
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/sbom-generator-chart
+    version: 0.0.10
+
+  - name: transparency-api
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/starwit-aicapi-transparency-chart
+    version: 0.1.1
+    values:
+      - app:
+          context_path: ""
+          service_uri: http://transparency-api-starwit-aicapi-transparency-chart:8080
