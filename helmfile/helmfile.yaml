@@ -193,10 +193,21 @@ releases:
           enabled: true
           generator:
             uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
-
-#        extraEnv: |
-#          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
-#            value: TRACE
+        extraEnv: |
+          - name: SPRING_DATA_REDIS_ACTIVE
+            value: "true"
+          - name: SPRING_DATA_STREAM_PREFIX
+            value: reportingaicockpit
+          - name: SPRING_DATA_REDIS_HOST
+            value: valkey-primary
+          - name: SPRING_DATA_REDIS_PORT
+            value: "6379"
+          - name: SPRING_DATA_REDIS_STREAM_IDS
+            value: stream1
+          - name: DECISION_TYPE_RANDOM
+            value: "true"
+          - name: SPRING_AUTOCONFIGURE_EXCLUDE
+            value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 
   - name: keycloak
     namespace: {{ .Values.namespace }}
@@ -274,7 +285,7 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.15.3
+    version: 1.0.0
     values:
       - config:
           log_level: INFO
@@ -282,12 +293,18 @@ releases:
             endpoint: "minio:9000"
             user: minioadmin
             password: {{ .Values.minio.password }}
-          redis:
-            stream_id: stream1
+            secure: false
+          redis_input:
             host: valkey-primary
             port: 6379
-            input_stream_prefix: anomalydetection
-            output_stream_prefix: reportingaicockpit
+            stream_ids: 
+              - stream1
+            stream_prefix: anomalydetection
+          redis_output:
+            host: valkey-primary
+            port: 6379
+            stream_id: stream1
+            stream_prefix: reportingaicockpit
         imageCredentials:
           registry: docker.internal.starwit-infra.de
           username: docker
