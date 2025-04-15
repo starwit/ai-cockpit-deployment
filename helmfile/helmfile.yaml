@@ -148,10 +148,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.9"
+    version: "0.2.10-4"
     values:
       - image:
-          tag: "0.2.9-kic"
+          tag: "0.2.10-4-kic"
         app:
           context_path: ""
         auth:
