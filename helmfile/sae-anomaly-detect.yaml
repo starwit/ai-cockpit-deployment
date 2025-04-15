@@ -62,7 +62,7 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/sae-anomaly-detection
-    version: 0.3.5
+    version: 1.0.1
     values:
       - config:
           log_level: DEBUG
@@ -82,7 +82,9 @@ releases:
             weights_path: model/model_weights.pth
             background_path: model/frame.pth
           prometheus_port: 8000
-        imageCredentials:
+        weights:
+          imageTag: cnnsymmetricprob-rangelinesmedicaldr-20250409
+        pullSecret:
           registry: docker.internal.starwit-infra.de
           username: docker
           password: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry

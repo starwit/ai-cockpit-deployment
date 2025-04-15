@@ -287,7 +287,7 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 1.0.0
+    version: 3.0.0
     values:
       - config:
           log_level: INFO
@@ -307,7 +307,7 @@ releases:
             port: 6379
             stream_id: stream1
             stream_prefix: reportingaicockpit
-        imageCredentials:
+        pullSecret:
           registry: docker.internal.starwit-infra.de
           username: docker
           password: {{ .Values.pullSecret }}
