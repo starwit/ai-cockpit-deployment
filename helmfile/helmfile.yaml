@@ -8,7 +8,7 @@ repositories:
   - name: starwit-internal
     url: https://helm.internal.starwit-infra.de
     username: chartmuseum
-    password: {{ env "HELM_SECRET" }}
+    password: {{ requiredEnv "HELM_SECRET" }}
  
 
 helmDefaults:
@@ -109,6 +109,9 @@ environments:
         sampledata_import: false
         anomalyProcessing: false
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
+  hannover-demo:
+    values:
+      - environments/hannover-demo.yaml.gotmpl
 
 ---
 releases:
@@ -145,10 +148,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.2"
+    version: "0.2.10-4"
     values:
       - image:
-          tag: "0.2.2-kic"
+          tag: "0.2.10-4-kic"
         app:
           context_path: ""
         auth:
@@ -190,10 +193,23 @@ releases:
           enabled: true
           generator:
             uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
-
-#        extraEnv: |
-#          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
-#            value: TRACE
+        extraEnv: |
+          - name: SPRING_DATA_REDIS_ACTIVE
+            value: "true"
+          - name: SPRING_DATA_STREAM_PREFIX
+            value: reportingaicockpit
+          - name: SPRING_DATA_REDIS_HOST
+            value: valkey-primary
+          - name: SPRING_DATA_REDIS_PORT
+            value: "6379"
+          - name: SPRING_DATA_REDIS_STREAM_IDS
+            value: stream1
+          - name: DECISION_TYPE_RANDOM
+            value: "true"
+          - name: AUTOMATION
+            value: MANUAL
+          - name: SPRING_AUTOCONFIGURE_EXCLUDE
+            value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 
   - name: keycloak
     namespace: {{ .Values.namespace }}
@@ -271,7 +287,7 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 0.15.3
+    version: 3.0.0
     values:
       - config:
           log_level: INFO
@@ -279,13 +295,19 @@ releases:
             endpoint: "minio:9000"
             user: minioadmin
             password: {{ .Values.minio.password }}
-          redis:
-            stream_id: stream1
+            secure: false
+          redis_input:
             host: valkey-primary
             port: 6379
-            input_stream_prefix: anomalydetection
-            output_stream_prefix: reportingaicockpit
-        imageCredentials:
+            stream_ids: 
+              - stream1
+            stream_prefix: anomalydetection
+          redis_output:
+            host: valkey-primary
+            port: 6379
+            stream_id: stream1
+            stream_prefix: reportingaicockpit
+        pullSecret:
           registry: docker.internal.starwit-infra.de
           username: docker
           password: {{ .Values.pullSecret }}

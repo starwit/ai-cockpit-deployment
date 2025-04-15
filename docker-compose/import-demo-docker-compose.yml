@@ -34,8 +34,20 @@ services:
     ports:
       - "5433:5432"
 
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+       - ./pgadmin/postgreslocal-servers-config.json:/pgadmin4/servers.json
+    ports:
+      - "5050:80"
+
   aicockpit:
-    image: starwitorg/ai-cockpit:0.2.3-kic
+    image: starwitorg/ai-cockpit:0.2.10-4-kic
     environment:
       SPRING_PROFILES_ACTIVE: dev
       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/ai-cockpit"
@@ -52,12 +64,13 @@ services:
     volumes:
       - demodata:/scenariodata/traffic
     ports:
-      - 8080:8080
+      - 8080:8081
     expose:
       - "8080"
 
 volumes:
   db:
+  pgadmin:
   demodata:
     driver: local
     driver_opts:
