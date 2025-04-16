@@ -3,55 +3,82 @@
         "name": "Put App to maintenance mode",
         "description": "Application is set to maintenance mode and is not reachable for customers",
         "executionPolicy": "WITHCHECK",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Restart Application",
         "description": "Restart Application/Module",
         "executionPolicy": "WITHCHECK",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },    
     {
         "name": "Patch Application/Module",
         "description": "Create patch for application/module",
         "executionPolicy": "MANUAL",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Adapt configuration",
         "description": "Adapt configuration for a cloud element",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Customer messaging",
         "description": "Message all customers",
         "executionPolicy": "WITHCHECK",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Backup database",
         "description": "Create new database backup",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Recover database backup",
         "description": "Recover database backup",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Increase log level",
         "description": "Increase log level",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Decrease log level",
         "description": "Decrease log level",
         "executionPolicy": "AUTOMATIC",
-        "action": []
+        "action": [],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     }
 
 ]

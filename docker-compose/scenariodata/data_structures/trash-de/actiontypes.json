@@ -2,26 +2,46 @@
   {
     "name": "Ordnungsamt benachrichtigen",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Auftragsliste und Tour generieren",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Abschleppdienst benachrichtigen",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Grünflächenamt benachrichtigen",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Einsatzwagen benachrichtigen",
     "description": "",
-    "executionPolicy": "WITHCHECK"
+    "executionPolicy": "WITHCHECK",
+    "action": [],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   }
 ]

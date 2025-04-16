@@ -7,19 +7,19 @@
     "state": "NEW",
     "description": "Veterans way / main street",
     "decisionType": {
-      "id": 2
+      "name": "accident"
     },
     "action": []
   },
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/dangerousdrivingbehaviour01.mp4",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "cameraLatitude": 39.932357,
+    "cameraLongitude": -86.105869,
     "state": "NEW",
     "description": "Rangeline / Medical Drive",
     "decisionType": {
-      "id": 1
+      "name": "dangerous driving behaviour"
     },
     "action": []
   },
@@ -31,7 +31,7 @@
     "state": "NEW",
     "description": "Rangeline / main street",
     "decisionType": {
-      "id": 2
+      "name": "accident"
     },
     "action": []
   },
@@ -43,31 +43,31 @@
     "state": "NEW",
     "description": "Rangeline / City Center Drive",
     "decisionType": {
-      "id": 1
+      "name": "dangerous driving behaviour"
     },
     "action": []
   },
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/dangerousdrivingbehaviour03.mp4",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "cameraLatitude": 39.978561,
+    "cameraLongitude": -86.127052,
     "state": "NEW",
     "description": "Rangeline / Medical Drive",
     "decisionType": {
-      "id": 1
+      "name": "dangerous driving behaviour"
     },
     "action": []
   },
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/accident02.mp4",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "cameraLatitude": 39.978430,
+    "cameraLongitude": -86.117964,
     "state": "NEW",
     "description": "Rangeline / Medical Drive",
     "decisionType": {
-      "id": 4
+      "name": "disabled vehicle"
     },
     "action": []
   },
@@ -79,19 +79,19 @@
     "state": "NEW",
     "description": "Rangeline / main street",
     "decisionType": {
-      "id": 3
+      "name": "traffic jam"
     },
     "action": []
   },
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/dangerousdrivingbehaviour04.mp4",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "cameraLatitude": 39.978294,
+    "cameraLongitude": -86.112683,
     "state": "NEW",
     "description": "Rangeline / Medical Drive",
     "decisionType": {
-      "id": 1
+      "name": "dangerous driving behaviour"
     },
     "action": []
   },
@@ -103,19 +103,19 @@
     "state": "NEW",
     "description": "Keystone / main street",
     "decisionType": {
-      "id": 4
+      "name": "disabled vehicle"
     },
     "action": []
   },
   {
     "acquisitionTime": "DATETIME",
     "mediaUrl": "anomalies/firstresponderops01.mp4",
-    "cameraLatitude": 39.95841772807577,
-    "cameraLongitude": -86.12682180111628,
+    "cameraLatitude": 39.9742,
+    "cameraLongitude": -86.1183,
     "state": "NEW",
     "description": "Rangeline / Medical Drive",
     "decisionType": {
-      "id": 6
+      "name": "first responder ops"
     },
     "action": []
   },
@@ -127,7 +127,7 @@
     "state": "NEW",
     "description": "Hazeldell / main street",
     "decisionType": {
-      "id": 5
+      "name": "helpless person"
     },
     "action": []
   },
@@ -139,7 +139,7 @@
     "state": "NEW",
     "description": "Hazeldell / 126th",
     "decisionType": {
-      "id": 3
+      "name": "traffic jam"
     },
     "action": []
   }

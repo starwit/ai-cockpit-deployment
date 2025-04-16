@@ -5,12 +5,15 @@
         "decision": [],
         "actionType": [
             {
-                "id": 1
+                "name": "Put App to maintenance mode"
             },
             {
-                "id": 4
+                "name": "Adapt configuration"
             }
-        ]
+        ],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Corrupt data",
@@ -18,15 +21,18 @@
         "decision": [],
         "actionType": [
             {
-                "id": 1
+                "name": "Put App to maintenance mode"
             },
             {
-                "id": 7
+                "name": "Recover database backup"
             },
             {
-                "id": 8
+                "name": "Increase log level"
             }
-        ]
+        ],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     },
     {
         "name": "Application bug",
@@ -34,17 +40,20 @@
         "decision": [],
         "actionType": [
             {
-                "id": 1
+                "name": "Put App to maintenance mode"
             },
             {
-                "id": 3
+                "name": "Patch Application/Module"
             },
             {
-                "id": 7
+                "name": "Recover database backup"
             },
             {
-                "id": 2
+                "name": "Restart Application"
             }
-        ]
+        ],
+        "module": {
+            "name": "Anomaly Detection"
+        }
     }
 ]

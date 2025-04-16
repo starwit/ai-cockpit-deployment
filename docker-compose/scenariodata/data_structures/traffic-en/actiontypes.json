@@ -1,32 +1,47 @@
 [
     {
-        "name": "notify police",
+      "name": "notify police",
         "description": "Notify the police about the decision",
-        "executionPolicy": "WITHCHECK",
-        "action": []
+      "executionPolicy": "WITHCHECK",
+      "action": [],
+      "module": {
+        "name": "Anomaly Detection"
+      }
     },
     {
-        "name": "notify emergency services",
-        "description": "Notify emergency services like ambulances or fire departments",
-        "executionPolicy": "MANUAL",
-        "action": []
+      "name": "notify emergency services",
+      "description": "Notify emergency services like ambulances or fire departments",
+      "executionPolicy": "MANUAL",
+      "action": [],
+      "module": {
+        "name": "Anomaly Detection"
+      }
     },
     {
-        "name": "notify public alarm services",
-        "description": "Notify public platforms or apps about the decision",
-        "executionPolicy": "AUTOMATIC",
-        "action": []
+      "name": "notify public alarm services",
+      "description": "Notify public platforms or apps about the traffic incident",
+      "executionPolicy": "AUTOMATIC",
+      "action": [],
+      "module": {
+        "name": "Anomaly Detection"
+      }
     },
     {
-        "name": "I2X notification",
-        "description": "Issue an infrastructure to X message",
-        "executionPolicy": "WITHCHECK",
-        "action": []
+      "name": "I2X notification",
+      "description": "Issue an infrastructure to X message",
+      "executionPolicy": "WITHCHECK",
+      "action": [],
+      "module": {
+        "name": "Anomaly Detection"
+      }
     },
     {
-        "name": "notify towing service",
-        "description": "Get disabled vehicles or obstacles removed",
-        "executionPolicy": "AUTOMATIC",
-        "action": []
+      "name": "notify towing service",
+      "description": "Get disabled vehicles or obstacles removed",
+      "executionPolicy": "AUTOMATIC",
+      "action": [],
+      "module": {
+        "name": "Anomaly Detection"
+      }
     }
-]
+  ]

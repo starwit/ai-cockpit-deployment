@@ -4,47 +4,62 @@
     "description": "Traffic sign is no longer recognizable and needs to be cleaned",
     "actionType": [
       {
-        "id": 5
+        "name": "Notify Patrol Vehicle"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Wild Weed Growth",
     "description": "Wild weeds on the sidewalk or roadside",
     "actionType": [
       {
-        "id": 4
+        "name": "Notify Parks Department"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Overfilled Trash Bin",
     "description": "Trash is already lying next to the trash bin",
     "actionType": [
       {
-        "id": 5
+        "name": "Notify Patrol Vehicle"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Illegal Waste Disposal",
     "description": "Unauthorized dumping of bulky waste or other piles of trash",
     "actionType": [
       {
-        "id": 5
+        "name": "Notify Patrol Vehicle"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   },
   {
     "name": "Illegally Parked Vehicle",
     "description": "Illegally parked vehicle obstructing garbage collection and needs towing",
     "actionType": [
       {
-        "id": 1
+        "name": "Notify Public Order Office"
       },
       {
-        "id": 3
+        "name": "Notify Towing Service"
       }
-    ]
+    ],
+    "module": {
+      "name": "Anomaly Detection"
+    }
   }
 ]
