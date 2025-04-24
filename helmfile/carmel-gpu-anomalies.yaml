@@ -41,7 +41,7 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 3.1.0
+    version: 3.1.2
     values:
       - config:
           log_level: INFO
