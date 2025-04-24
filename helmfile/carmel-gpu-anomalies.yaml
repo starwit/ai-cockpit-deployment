@@ -37,33 +37,15 @@ environments:
 
 ---
 releases:
-  - name: minio
-    namespace: {{ .Values.namespace }}
-    chart: oci://registry-1.docker.io/bitnamicharts/minio
-    installed: true
-    version: "14.8.5"  
-    values:
-      - auth:
-          rootUser: {{ .Values.minio.user }}
-          rootPassword: {{ .Values.minio.password }}
-        ingress:
-          enabled: false
-        defaultBuckets: anomalies
-
   - name: anomaly-post-processing
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 3.0.0
+    version: 3.1.0
     values:
       - config:
           log_level: INFO
-          minio:
-            endpoint: "minio:9000"
-            user: {{ .Values.minio.user }}
-            password: {{ .Values.minio.password }}
-            secure: false
-            bucket_name: anomalies
+          minio: null
           redis_input:
             host: {{ .Values.redis.host }}
             port: {{ .Values.redis.port }}
@@ -71,6 +53,8 @@ releases:
               - RangelineSMedicalDr
             stream_prefix: anomalydetection
           redis_output: null
+          local_output:
+            path: /anomaly-data
           raw_anomalies: true
         pullSecret:
           registry: docker.internal.starwit-infra.de
