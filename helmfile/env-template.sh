@@ -6,3 +6,5 @@ export MINIO_PW=minioadmin
 
 export PULL_SECRET=secret # Starwit's internal Docker registry
 export HELM_SECRET=secret # Starwit's internal Helm registry
+
+export FUNCTION_USER_PW=pw

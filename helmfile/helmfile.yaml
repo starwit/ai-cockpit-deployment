@@ -26,6 +26,7 @@ environments:
           keycloakAdminPw: admin        
           clientSecret: aicockpit
           realmAdminPw: aicockpit
+          functionUserPw: apiUser
         minio:
           user: minioadmin
           password: minioadmin
@@ -43,6 +44,7 @@ environments:
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+          functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
@@ -63,6 +65,7 @@ environments:
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+          functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
@@ -83,6 +86,7 @@ environments:
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+          functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
@@ -103,6 +107,7 @@ environments:
           keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
+          functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
@@ -148,10 +153,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.10-4"
+    version: "1.0.1-1"
     values:
       - image:
-          tag: "0.2.10-4-kic"
+          tag: "1.0.1-1-kic"
         app:
           context_path: ""
         auth:
@@ -317,3 +322,9 @@ releases:
       - app:
           context_path: ""
           service_uri: http://transparency-api-starwit-aicapi-transparency-chart:8080
+      - auth:
+          enabled: true
+          auth_url: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}/realms/aicockpit/protocol/openid-connect/token
+          client_id: aicockpit
+          username: function.user
+          password: {{ .Values.auth.functionUserPw }}
