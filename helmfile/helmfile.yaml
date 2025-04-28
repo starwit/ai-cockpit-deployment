@@ -194,16 +194,6 @@ releases:
           generator:
             uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
         extraEnv: |
-          - name: SPRING_DATA_REDIS_ACTIVE
-            value: "true"
-          - name: SPRING_DATA_STREAM_PREFIX
-            value: reportingaicockpit
-          - name: SPRING_DATA_REDIS_HOST
-            value: valkey-primary
-          - name: SPRING_DATA_REDIS_PORT
-            value: "6379"
-          - name: SPRING_DATA_REDIS_STREAM_IDS
-            value: stream1
           - name: DECISION_TYPE_RANDOM
             value: "true"
           - name: AUTOMATION
