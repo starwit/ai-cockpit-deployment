@@ -282,26 +282,32 @@ releases:
     installed: {{ .Values.anomalyProcessing }}
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 3.0.0
+    version: 4.0.0
     values:
       - config:
-          log_level: INFO
-          minio:
-            endpoint: "minio:9000"
-            user: minioadmin
-            password: {{ .Values.minio.password }}
-            secure: false
+          log_level: DEBUG
+          raw_anomalies: false
+          http_output:
+            target_endpoint: http://ai-cockpit:8081/api/aic/decision
+            module_name: Anomaly Detection
+            decision_type_name: dangerous driving behaviour
+            minio:
+              endpoint: "minio:9000"
+              user: minioadmin
+              password: {{ .Values.minio.password }}
+              secure: false
+              bucket_name: anomalies
+            auth:
+              token_endpoint_url: http://keycloak/auth/realms/aicockpit/protocol/openid-connect/token
+              client_id: aicockpit
+              username: admin
+              password: {{ .Values.auth.realmAdminPw }}
           redis_input:
             host: valkey-primary
             port: 6379
             stream_ids: 
               - stream1
             stream_prefix: anomalydetection
-          redis_output:
-            host: valkey-primary
-            port: 6379
-            stream_id: stream1
-            stream_prefix: reportingaicockpit
         pullSecret:
           registry: docker.internal.starwit-infra.de
           username: docker
