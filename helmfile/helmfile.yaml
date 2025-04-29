@@ -288,9 +288,9 @@ releases:
           log_level: DEBUG
           raw_anomalies: false
           http_output:
-            target_endpoint: http://ai-cockpit:8081/api/aic/decision
+            target_endpoint: http{{- if .Values.tls }}s{{- end }}://cockpit.{{ .Values.hostname }}/api/aic/decision
             module_name: Anomaly Detection
-            decision_type_name: dangerous driving behaviour
+            decision_type_name: gefährliches Fahrverhalten
             minio:
               endpoint: "minio:9000"
               user: minioadmin
@@ -298,10 +298,10 @@ releases:
               secure: false
               bucket_name: anomalies
             auth:
-              token_endpoint_url: http://keycloak/auth/realms/aicockpit/protocol/openid-connect/token
+              token_endpoint_url: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}/realms/aicockpit/protocol/openid-connect/token
               client_id: aicockpit
-              username: admin
-              password: {{ .Values.auth.realmAdminPw }}
+              username: function.user
+              password: {{ .Values.auth.functionUserPw }}
           redis_input:
             host: valkey-primary
             port: 6379
