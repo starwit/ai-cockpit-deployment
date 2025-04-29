@@ -31,7 +31,6 @@ environments:
           password: minioadmin
         pullSecret: {{ requiredEnv "PULL_SECRET" }}
 
-        
 ---
 releases:
   - name: aicockpit 
@@ -62,7 +61,7 @@ releases:
           endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
         sampledata:
           enabled: true
-          image: starwitorg/ai-cockpit-sampledata:latest
+          image: starwitorg/ai-cockpit-sampledata:250429-test
           importFolder: traffic
           language: en
         aiapi:
@@ -99,15 +98,21 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 1.0.0
+    version: 4.0.0
     values:
       - config:
-          log_level: INFO
-          minio:
-            endpoint: "minio:9000"
-            user: {{ .Values.minio.user }}
-            password: {{ .Values.minio.password }}
-            secure: false
+          log_level: DEBUG
+          raw_anomalies: false
+          http_output:
+            target_endpoint: http://ai-cockpit:8081/api/aic/decision
+            module_name: Anomaly Detection
+            decision_type_name: dangerous driving behaviour
+            minio:
+              user: {{ .Values.minio.user }}
+              password: {{ .Values.minio.password }}
+              endpoint: minio:9000
+              secure: false
+              bucket_name: anomalies
           redis_input:
             host: valkey-primary
             port: 6379
@@ -115,13 +120,7 @@ releases:
               - medical
               - citycenter
             stream_prefix: anomalydetection
-          redis_output:
-            host: valkey-primary
-            port: 6379
-            stream_id: stream1
-            stream_prefix: reportingaicockpit
-        extraImagePullSecrets:
-          - name: internal-docker-registry
+        existingPullSecret: internal-docker-registry
 
   - name: valkey
     installed: true
