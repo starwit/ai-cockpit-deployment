@@ -252,7 +252,7 @@
         "name": "Stress level",
         "description": "A human collaborator experiences too high/low stress level",
         "module": {
-            "name": "Human observatory"
+            "name": "Workload Detection"
         },
         "actionTypes": []
     },
@@ -260,9 +260,33 @@
         "name": "Application configuration not optimal",
         "description": "AI proposes more optimal configuration",
         "module": {
-            "name": "Human observatory"
+            "name": "Workload Detection"
         },
         "actionTypes": []
+    },
+    {
+        "name": "Workload is low",
+        "description": "The person may find the task too easy.",
+        "module": {
+            "name": "Workload Detection"
+        },
+        "actionTypes": [
+            {
+                "name": "Increase orders"
+            }
+        ]
+    },
+    {
+        "name": "Workload is high",
+        "description": "The person may find the task too difficult.",
+        "module": {
+            "name": "Workload Detection"
+        },
+        "actionTypes": [
+            {
+                "name": "Reduce orders"
+            }
+        ]
     },
     {
         "name": "Memory leak detected",

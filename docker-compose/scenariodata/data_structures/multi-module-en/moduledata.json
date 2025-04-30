@@ -274,16 +274,16 @@
     }
   },
   {
-    "name": "Human observatory",
-    "description": "Detects if humans are under to much stress or other harmful conditions",
-    "version": "1.1.1",
-    "applicationIdentifier": "cookinggame",
-    "useAI": false,
+    "name": "Workload Detection",
+    "description": "Detects current workload state of the user",
+    "version": "0.0.1",
+    "applicationIdentifier": "overcooked",
+    "useAI": true,
     "model": {
-      "name": "EEG interpretor",
-      "version": "1.0.1",
+      "name": "fbcsp_riemann",
+      "version": "0.0.1",
       "lastDeployment": "2025-04-25T01:36:50.277768993+01:00",
-      "modelType": "LLM",
+      "modelType": "MISC",
       "modelLink": "https://example.com/",
       "publicTrainingData": true,
       "linkToPublicTrainingData": "https://blog.iao.fraunhofer.de/author/nektaria-tagalidou/"

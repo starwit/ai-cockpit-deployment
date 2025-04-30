@@ -434,6 +434,42 @@
   },
   {
     "acquisitionTime": "DATETIME",
+    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-48.png",
+    "state": "NEW",
+    "description": "Überforderung",
+    "decisionType": {
+      "name": "Workload is high"
+    },
+    "module": {
+        "name": "Workload Detection"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-41.png",
+    "state": "NEW",
+    "description": "Überforderung",
+    "decisionType": {
+      "name": "Workload is high"
+    },
+    "module": {
+        "name": "Workload Detection"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-18.png",
+    "state": "NEW",
+    "description": "Unterforderung",
+    "decisionType": {
+      "name": "Workload is low"
+    },
+    "module": {
+        "name": "Workload Detection"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
     "mediaUrl": "telco/ApplicationBug.jpg",
     "actionVisualizationUrl": "telco/Application_Recovery.jpg",
     "state": "NEW",

@@ -216,6 +216,42 @@
         }
     },
     {
+        "name": "Reduce orders",
+        "description": "Number of order will be reduced",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Workload Detection"
+        },
+        "endpoint": "10.36.92.3:5000/difficulty/order/reduce"
+    },
+    {
+        "name": "Increase orders",
+        "description": "Number of order will be increased",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Workload Detection"
+        },
+        "endpoint": "10.36.92.3:5000/difficulty/order/increase"
+    },
+    {
+        "name": "Reduce order time",
+        "description": "The time available per order is reduced",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Workload Detection"
+        },
+        "endpoint": "10.36.92.3:5000/difficulty/time/reduce"
+    },
+    {
+        "name": "Increase order time",
+        "description": "The time available per order is incrased",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Workload Detection"
+        },
+        "endpoint": "10.36.92.3:5000/difficulty/time/increase"
+    },
+    {
         "name": "Re-route traffic",
         "description": "Decrease log level",
         "executionPolicy": "AUTOMATIC",
