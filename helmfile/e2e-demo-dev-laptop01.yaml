@@ -22,7 +22,7 @@ environments:
           user: minioadmin
           password: minioadmin
         pullSecret: {{ requiredEnv "PULL_SECRET" }}
-  hannover-demo:
+  dev-laptop01:
     values:
       - namespace: aic
         hostname: aic.dev-laptop01
@@ -98,7 +98,7 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 4.0.0
+    version: 4.0.1
     values:
       - config:
           log_level: DEBUG
@@ -106,7 +106,6 @@ releases:
           http_output:
             target_endpoint: http://ai-cockpit:8081/api/aic/decision
             module_name: Anomaly Detection
-            decision_type_name: dangerous driving behaviour
             minio:
               user: {{ .Values.minio.user }}
               password: {{ .Values.minio.password }}
