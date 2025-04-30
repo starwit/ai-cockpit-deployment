@@ -14,13 +14,13 @@ helmDefaults:
   wait: true
 
 environments:
-  default:
+  local:
     values:
       - namespace: temp
         valkey: true
   aic-dev:
     values:
-      - namespace: sae
+      - namespace: anomaly-detection
         valkey: true
 
 ---
@@ -69,11 +69,11 @@ releases:
           redisIn:
             host: valkey-primary
             port: 6379
-            stream_id: citycenter
+            stream_id: rangelinesmedicaldr
             stream_prefix: geomapper
           redisOut:
-            host: 10.0.1.6
-            port: 30379
+            host: valkey-primary.aic
+            port: 6379
             stream_id: stream1
             stream_prefix: anomalydetection
           filtering: True
