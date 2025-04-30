@@ -14,7 +14,7 @@ helmDefaults:
   wait: true
 
 environments:
-  default:
+  local:
     values:
       - namespace: temp
         hostname: messe-demo.local
