@@ -54,27 +54,6 @@ environments:
           language: en
         anomalyProcessing: true
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
-  aic-dev-cloud:
-    values:  
-      - namespace: aic-cloud
-        hostname: cloud.aic.starwit-infra.de
-        tls: true
-        landing_page: false
-        auth:
-          enabled: true
-          keycloakAdminPw: {{ requiredEnv "KEYCLOAK_ADMIN_PW" }}
-          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
-          realmAdminPw: {{ requiredEnv "KEYCLOAK_REALM_PW" }}
-          functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
-        minio:
-          user: minioadmin
-          password: {{ requiredEnv "MINIO_PW" }}
-        sampledata: 
-          enabled: true
-          importFolder: cloud
-          language: en
-        anomalyProcessing: false
-        pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aalen-dev:
     values:  
       - namespace: aic
