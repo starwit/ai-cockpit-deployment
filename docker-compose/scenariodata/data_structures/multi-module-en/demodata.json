@@ -1,0 +1,627 @@
+[
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/accident01.mp4",
+    "cameraLatitude": 39.978355,
+    "cameraLongitude": -86.131626,
+    "state": "NEW",
+    "description": "Veterans way / main street",
+    "decisionType": {
+      "name": "accident"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/dangerousdrivingbehaviour01.mp4",
+    "cameraLatitude": 39.975186,
+    "cameraLongitude": -86.127030,
+    "state": "NEW",
+    "description": "Rangeline / Medical Drive",
+    "decisionType": {
+      "name": "dangerous driving behaviour"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/accident02.mp4",
+    "cameraLatitude": 39.970772,
+    "cameraLongitude": -86.127145,
+    "state": "NEW",
+    "description": "Rangeline / main street",
+    "decisionType": {
+      "name": "accident"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/dangerousdrivingbehaviour02.mp4",
+    "cameraLatitude": 39.978451,
+    "cameraLongitude": -86.131798,
+    "state": "NEW",
+    "description": "Rangeline / City Center Drive",
+    "decisionType": {
+      "name": "dangerous driving behaviour"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/dangerousdrivingbehaviour03.mp4",
+    "cameraLatitude": 39.978355,
+    "cameraLongitude": -86.131626,
+    "state": "NEW",
+    "description": "Rangeline / Medical Drive",
+    "decisionType": {
+      "name": "dangerous driving behaviour"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/accident02.mp4",
+    "cameraLatitude": 39.975186,
+    "cameraLongitude": -86.127030,
+    "state": "NEW",
+    "description": "Rangeline / Medical Drive",
+    "decisionType": {
+      "name": "disabled vehicle"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/trafficjam01.mp4",
+    "cameraLatitude": 39.956553032794865,
+    "cameraLongitude": -86.12674676463367,
+    "state": "NEW",
+    "description": "Rangeline / main street",
+    "decisionType": {
+      "name": "traffic jam"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/dangerousdrivingbehaviour04.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": "Rangeline / Medical Drive",
+    "decisionType": {
+      "name": "dangerous driving behaviour"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/disabled01.mp4",
+    "cameraLatitude": 39.978473,
+    "cameraLongitude": -86.127017,
+    "state": "NEW",
+    "description": "Keystone / main street",
+    "decisionType": {
+      "name": "disabled vehicle"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/firstresponderops01.mp4",
+    "cameraLatitude": 39.978451,
+    "cameraLongitude": -86.131798,
+    "state": "NEW",
+    "description": null,
+    "decisionType": {
+      "name": "first responder ops"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/firstresponderops01.mp4",
+    "cameraLatitude": 39.95841772807577,
+    "cameraLongitude": -86.12682180111628,
+    "state": "NEW",
+    "description": "Rangeline / Medical Drive",
+    "decisionType": {
+      "name": "helpless person"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "traffic/trafficjam02.mp4",
+    "cameraLatitude": 39.978451,
+    "cameraLongitude": -86.131798,
+    "state": "NEW",
+    "description": "Hazeldell / 126th",
+    "decisionType": {
+      "name": "traffic jam"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:16:47Z",
+    "mediaUrl": "trash/weed01.jpg",
+    "cameraLatitude": 39.985589,
+    "cameraLongitude": -86.131719,
+    "state": "NEW",
+    "description": "",
+    "decisionType": {
+      "name": "Wild Weed Growth"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:16:36Z",
+    "mediaUrl": "trash/trafficSign01.jpg",
+    "cameraLatitude": 39.978309,
+    "cameraLongitude": -86.133787,
+    "state": "NEW",
+    "description": "Damaged Traffic Sign",
+    "decisionType": {
+      "name": "Contaminated Traffic Signs"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-11T18:42:47Z",
+    "mediaUrl": "trash/illegalParking01.jpg",
+    "cameraLatitude": 39.985589,
+    "cameraLongitude": -86.131719,
+    "state": "NEW",
+    "description": "Illegally Parked Vehicle",
+    "decisionType": {
+      "name": "Illegally Parked Vehicle"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:17:07Z",
+    "mediaUrl": "trash/illegalParking03.jpg",
+    "cameraLatitude": 39.980254,
+    "cameraLongitude": -86.143703,
+    "state": "NEW",
+    "description": "Illegally Parked Vehicle",
+    "decisionType": {
+      "name": "Illegally Parked Vehicle"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:17:37Z",
+    "mediaUrl": "trash/trash03.jpg",
+    "cameraLatitude": 39.970734,
+    "cameraLongitude": -86.128939,
+    "state": "NEW",
+    "description": "Illegal Waste Disposal",
+    "decisionType": {
+      "name": "Illegal Waste Disposal"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:17:47Z",
+    "mediaUrl": "trash/weed02.jpg",
+    "cameraLatitude": 39.974686,
+    "cameraLongitude": -86.141046,
+    "state": "NEW",
+    "description": "Wild Weed Growth",
+    "decisionType": {
+      "name": "Wild Weed Growth"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-10-31T14:59:57Z",
+    "mediaUrl": "trash/weed03.jpg",
+    "cameraLatitude": 39.978309,
+    "cameraLongitude": -86.133787,
+    "state": "NEW",
+    "description": "Wild Weed Growth",
+    "decisionType": {
+      "name": "Wild Weed Growth"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-10-31T15:00:08Z",
+    "mediaUrl": "trash/weed04.jpg",
+    "cameraLatitude": 39.985589,
+    "cameraLongitude": -86.131719,
+    "state": "NEW",
+    "description": "Wild Weed Growth",
+    "decisionType": {
+      "name": "Wild Weed Growth"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:16:57Z",
+    "mediaUrl": "trash/trash01.mp4",
+    "cameraLatitude": 39.97078,
+    "cameraLongitude": -86.127168,
+    "state": "ACCEPTED",
+    "description": "Illegal Waste Dump",
+    "decisionType": {
+      "name": "Illegal Waste Disposal"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:18:07Z",
+    "mediaUrl": "trash/trash02.jpg",
+    "cameraLatitude": 39.975163,
+    "cameraLongitude": -86.12691,
+    "state": "ACCEPTED",
+    "description": "Illegal Waste Disposal",
+    "decisionType": {
+      "name": "Illegal Waste Disposal"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-12T11:17:57Z",
+    "mediaUrl": "trash/trashContainer01.jpg",
+    "cameraLatitude": 39.97227,
+    "cameraLongitude": -86.151024,
+    "state": "ACCEPTED",
+    "description": "Overfilled Trash Bin",
+    "decisionType": {
+      "name": "Overfilled Trash Bin"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-10-31T15:00:18Z",
+    "mediaUrl": "trash/illegalParking02.jpg",
+    "cameraLatitude": 39.97078,
+    "cameraLongitude": -86.127168,
+    "state": "REJECTED",
+    "description": "Illegally Parked Vehicle",
+    "decisionType": {
+      "name": "Illegally Parked Vehicle"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "2024-11-11T18:42:37Z",
+    "mediaUrl": "trash/trashContainer02.mp4",
+    "cameraLatitude": 39.978309,
+    "cameraLongitude": -86.133787,
+    "state": "NEW",
+    "description": "Overfilled Trash Bin",
+    "decisionType": {
+      "name": "Overfilled Trash Bin"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "trash/trash01.mp4",
+    "cameraLatitude": 52.416188,
+    "cameraLongitude": 10.7276736,
+    "state": "NEW",
+    "description": "Mozartstraße - Illegal Waste Disposal",
+    "decisionType": {
+      "name": "Illegal Waste Disposal"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "trash/trash01.mp4",
+    "cameraLatitude": 52.416188,
+    "cameraLongitude": 10.7276736,
+    "state": "NEW",
+    "description": "Mozartstraße - Illegal Waste Disposal",
+    "decisionType": {
+      "name": "Illegal Waste Disposal"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "trash/trash02.jpg",
+    "cameraLatitude": 52.42025475930882,
+    "cameraLongitude": 10.724712299498925,
+    "state": "NEW",
+    "description": "Mozartstraße - Wild Weed Growth",
+    "decisionType": {
+      "name": "Wild Weed Growth"
+    },
+    "module": {
+      "name": "Waste Incident Classifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "trash/reschedule.jpg",
+    "state": "NEW",
+    "description": "Updated collection dispatch",
+    "decisionType": {
+      "name": "Waste Collection Re-Planning"
+    },
+    "module": {
+      "name": "Waste Collection Planer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "cloud/DatabaseCorrupt.jpg",
+    "actionVisualizationUrl": "cloud/DatabaseCorrupt_recovery.jpg",
+    "state": "NEW",
+    "description": "Database corrupt",
+    "decisionType": {
+      "name": "Corrupt data"
+    },
+    "module": {
+      "name": "Application Bug Identifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "cloud/DNSBug.jpg",
+    "actionVisualizationUrl": "cloud/DNS_Recovery.jpg",
+    "state": "NEW",
+    "description": "DNS resolution not working",
+    "decisionType": {
+      "name": "Configuration issue"
+    },
+    "module": {
+      "name": "Application Bug Identifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "cloud/FunctionalServiceBug.jpg",
+    "actionVisualizationUrl": "cloud/FunctionalService_Recovery.jpg",
+    "state": "NEW",
+    "description": "Buggy lambda service",
+    "decisionType": {
+      "name": "Application bug"
+    },
+    "module": {
+      "name": "Application Bug Identifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "cloud/ApplicationBug.jpg",
+    "actionVisualizationUrl": "cloud/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Bug in application",
+    "decisionType": {
+      "name": "Application bug"
+    },
+    "module": {
+      "name": "Application Bug Identifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "cloud/ApplicationBug.jpg",
+    "actionVisualizationUrl": "cloud/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Compromised application",
+    "decisionType": {
+      "name": "Application compromised"
+    },
+    "module": {
+      "name": "Application Bug Identifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-48.png",
+    "state": "NEW",
+    "description": "Überforderung",
+    "decisionType": {
+      "name": "Workload is high"
+    },
+    "module": {
+        "name": "Workload Detection"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-41.png",
+    "state": "NEW",
+    "description": "Überforderung",
+    "decisionType": {
+      "name": "Workload is high"
+    },
+    "module": {
+        "name": "Workload Detection"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-18.png",
+    "state": "NEW",
+    "description": "Unterforderung",
+    "decisionType": {
+      "name": "Workload is low"
+    },
+    "module": {
+        "name": "Workload Detection"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Policy Control Function - high latency",
+    "decisionType": {
+      "name": "Component too slow"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Compromised customer data",
+    "decisionType": {
+      "name": "Intrusion Detected"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Balanced application too slow",
+    "decisionType": {
+      "name": "Component too slow"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Link failure predicted - VNF will go down",
+    "decisionType": {
+      "name": "Link will be down"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "MEC unbalanced",
+    "decisionType": {
+      "name": "Component too slow"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "MEC function restart necessary",
+    "decisionType": {
+      "name": "Application restart"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Decider"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Re-route necessary",
+    "decisionType": {
+      "name": "Re-route traffic"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Decider"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Similarity detected",
+    "decisionType": {
+      "name": "Similarity detected"
+    },
+    "module": {
+      "name": "Intelligent Network Operator - Workflow Generator"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "factory/zaehler.jpg",
+    "actionVisualizationUrl": "factory/riss_zerlegt.png",
+    "state": "NEW",
+    "description": "Slow down in counting controller",
+    "decisionType": {
+      "name": "Congestion predicted"
+    },
+    "module": {
+      "name": "Factory Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "factory/fraeskopf.jpg",
+    "actionVisualizationUrl": "factory/gesamt.png",
+    "state": "NEW",
+    "description": "Milling component will fail",
+    "decisionType": {
+      "name": "Maintenance necessary"
+    },
+    "module": {
+      "name": "Factory Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "factory/rohmaterial.jpg",
+    "actionVisualizationUrl": "factory/gesamt.png",
+    "state": "NEW",
+    "description": "Insuffcient raw material",
+    "decisionType": {
+      "name": "Maintenance necessary"
+    },
+    "module": {
+      "name": "Factory Observer"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "factory/material.jpg",
+    "actionVisualizationUrl": "factory/topview.png",
+    "state": "NEW",
+    "description": "Multiple optimization opportunities",
+    "decisionType": {
+      "name": "Production not optimal"
+    },
+    "module": {
+      "name": "Factory Observer"
+    }
+  }
+]
