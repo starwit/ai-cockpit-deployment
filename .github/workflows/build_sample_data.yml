@@ -45,4 +45,3 @@ jobs:
         push: true
         tags: |
           ${{ env.DOCKERHUB_ORG }}/${{ env.IMAGE_NAME }}:${{ env.RELEASE_VERSION }}
-          ${{ env.DOCKERHUB_ORG }}/${{ env.IMAGE_NAME }}:latest

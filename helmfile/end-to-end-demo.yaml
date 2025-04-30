@@ -31,14 +31,15 @@ environments:
           password: minioadmin
         pullSecret: {{ requiredEnv "PULL_SECRET" }}
 
-        
 ---
 releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "0.2.9-3"
+    version: "1.0.1-1"
     values:
+      - image:
+          tag: "1.0.1-1-kic"
       - app:
           context_path: ""
         postgresql:
@@ -60,7 +61,7 @@ releases:
           endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
         sampledata:
           enabled: true
-          image: starwitorg/ai-cockpit-sampledata:latest
+          image: starwitorg/ai-cockpit-sampledata:250429-test
           importFolder: traffic
           language: en
         aiapi:
@@ -72,17 +73,7 @@ releases:
           generator:
             uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
         extraEnv: |
-          - name: SPRING_DATA_REDIS_ACTIVE
-            value: "true"
-          - name: SPRING_DATA_STREAM_PREFIX
-            value: reportingaicockpit
-          - name: SPRING_DATA_REDIS_HOST
-            value: valkey-primary
-          - name: SPRING_DATA_REDIS_PORT
-            value: "6379"
-          - name: SPRING_DATA_REDIS_STREAM_IDS
-            value: stream1
-          - name: INCIDENT_TYPE_DEFAULT
+          - name: DECISION_TYPE_DEFAULT
             value: "dangerous driving behaviour"
           - name: SPRING_AUTOCONFIGURE_EXCLUDE
             value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
@@ -107,15 +98,21 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/anomaly-post-processing
-    version: 1.0.0
+    version: 4.0.0
     values:
       - config:
-          log_level: INFO
-          minio:
-            endpoint: "minio:9000"
-            user: {{ .Values.minio.user }}
-            password: {{ .Values.minio.password }}
-            secure: false
+          log_level: DEBUG
+          raw_anomalies: false
+          http_output:
+            target_endpoint: http://ai-cockpit:8081/api/aic/decision
+            module_name: Anomaly Detection
+            decision_type_name: dangerous driving behaviour
+            minio:
+              user: {{ .Values.minio.user }}
+              password: {{ .Values.minio.password }}
+              endpoint: minio:9000
+              secure: false
+              bucket_name: anomalies
           redis_input:
             host: valkey-primary
             port: 6379
@@ -123,13 +120,7 @@ releases:
               - medical
               - citycenter
             stream_prefix: anomalydetection
-          redis_output:
-            host: valkey-primary
-            port: 6379
-            stream_id: stream1
-            stream_prefix: reportingaicockpit
-        extraImagePullSecrets:
-          - name: internal-docker-registry
+        existingPullSecret: internal-docker-registry
 
   - name: valkey
     installed: true
@@ -269,8 +260,10 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwitorg/starwit-aicapi-transparency-chart
-    version: 0.1.1
+    version: 1.0.0
     values:
       - app:
           context_path: ""
           service_uri: http://transparency-api-starwit-aicapi-transparency-chart:8080
+      - auth:
+          enabled: false
