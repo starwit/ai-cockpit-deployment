@@ -5,5 +5,6 @@ COPY ./scenariodata /scenariodata
 COPY ./minio/mc /bin
 COPY ./sample_data_image/import_binary_data.sh ./bin
 
+RUN apk add --no-cache bash
 RUN chmod +x /bin/mc
 RUN chmod +x /bin/import_binary_data.sh
