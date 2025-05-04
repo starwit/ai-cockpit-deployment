@@ -3,14 +3,14 @@
 main() {
     echo "check if there is subfolders"
 
-    local folder_path="$1"
+    local folder_path="$4"
     if [[ -d "$folder_path" ]]; then
         local subfolders
         subfolders=$(find "$folder_path" -mindepth 1 -maxdepth 1 -type d)
         if [[ -n "$subfolders" ]]; then
             echo "Total subfolders: $(echo "$subfolders" | wc -l)"
             echo "create minio bucket each"
-            create_buckets "$subfolders" $2 $3 $4
+            create_buckets "$subfolders" $1 $2 $3
         else
             echo "No subfolders found."
             echo "Total subfolders: 0"
