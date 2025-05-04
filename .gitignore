@@ -4,3 +4,4 @@ helmfile/aalen.env.sh
 helmfile/nexus.env.sh
 helmfile/hannover.env.sh
 *.env.sh
+env.*.sh
