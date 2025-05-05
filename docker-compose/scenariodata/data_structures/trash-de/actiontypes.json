@@ -3,45 +3,40 @@
     "name": "Ordnungsamt benachrichtigen",
     "description": "",
     "executionPolicy": "WITHCHECK",
-    "action": [],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Auftragsliste und Tour generieren",
     "description": "",
     "executionPolicy": "WITHCHECK",
-    "action": [],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Abschleppdienst benachrichtigen",
     "description": "",
     "executionPolicy": "WITHCHECK",
-    "action": [],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Grünflächenamt benachrichtigen",
     "description": "",
     "executionPolicy": "WITHCHECK",
-    "action": [],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Einsatzwagen benachrichtigen",
     "description": "",
     "executionPolicy": "WITHCHECK",
-    "action": [],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   }
 ]

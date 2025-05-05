@@ -2,55 +2,55 @@
   {
     "name": "Verunreinigte Verkehrsschilder",
     "description": "Verkehrsschild kann nicht mehr erkannt werden und Säuberung muss veranlasst werden",
-    "actionType": [
+    "actionTypes": [
       {
         "name": "Einsatzwagen benachrichtigen"
       }
     ],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Wildkrautbewuchs",
     "description": "Wildkaut auf Gehweg oder am Straßenrand",
-    "actionType": [
+    "actionTypes": [
       {
         "name": "Grünflächenamt benachrichtigen"
       }
     ],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Überfüllter Müllbehälter",
     "description": "Müll liegt bereits neben den Müllbehälter",
-    "actionType": [
+    "actionTypes": [
       {
         "name": "Einsatzwagen benachrichtigen"
       }
     ],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Müllablagerung",
     "description": "unbefugte Ablagerung von Sperrmüll oder anderer Müllhaufen",
-    "actionType": [
+    "actionTypes": [
       {
         "name": "Einsatzwagen benachrichtigen"
       }
     ],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   },
   {
     "name": "Falschparker",
     "description": "Falschparker behindert die Müllabfuhr und muss abgeschleppt werden",
-    "actionType": [
+    "actionTypes": [
       {
         "name": "Ordnungsamt benachrichtigen"
       },
@@ -59,7 +59,7 @@
       }
     ],
     "module": {
-      "name": "Anomaly Detection"
+      "name": "Waste Incident Classifier"
     }
   }
 ]
