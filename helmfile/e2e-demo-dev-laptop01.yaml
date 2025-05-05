@@ -36,10 +36,10 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "1.0.4"
+    version: "1.0.7"
     values:
       - image:
-          tag: "1.0.4-kic"
+          tag: "1.0.7-kic"
       - app:
           context_path: ""
         postgresql:
@@ -62,7 +62,7 @@ releases:
         sampledata:
           enabled: true
           image: starwitorg/ai-cockpit-sampledata:1.0.2
-          importFolder: traffic
+          importFolder: multi-module
           language: en
         aiapi:
           transparency:
