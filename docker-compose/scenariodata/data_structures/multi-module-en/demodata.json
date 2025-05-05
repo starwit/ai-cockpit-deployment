@@ -134,8 +134,8 @@
   {
     "acquisitionTime": "2024-11-12T11:16:47Z",
     "mediaUrl": "trash/weed01.jpg",
-    "cameraLatitude": 39.985589,
-    "cameraLongitude": -86.131719,
+    "cameraLatitude": 52.41989546591886,
+    "cameraLongitude": 10.716895312940808,
     "state": "NEW",
     "description": "",
     "decisionType": {
@@ -148,8 +148,8 @@
   {
     "acquisitionTime": "2024-11-12T11:16:36Z",
     "mediaUrl": "trash/trafficSign01.jpg",
-    "cameraLatitude": 39.978309,
-    "cameraLongitude": -86.133787,
+    "cameraLatitude": 52.419687281926564,
+    "cameraLongitude": 10.714074802351732,
     "state": "NEW",
     "description": "Damaged Traffic Sign",
     "decisionType": {
@@ -162,8 +162,8 @@
   {
     "acquisitionTime": "2024-11-11T18:42:47Z",
     "mediaUrl": "trash/illegalParking01.jpg",
-    "cameraLatitude": 39.985589,
-    "cameraLongitude": -86.131719,
+    "cameraLatitude": 52.41858656778023,
+    "cameraLongitude": 10.716852397594621,
     "state": "NEW",
     "description": "Illegally Parked Vehicle",
     "decisionType": {
@@ -176,8 +176,8 @@
   {
     "acquisitionTime": "2024-11-12T11:17:07Z",
     "mediaUrl": "trash/illegalParking03.jpg",
-    "cameraLatitude": 39.980254,
-    "cameraLongitude": -86.143703,
+    "cameraLatitude": 52.4192422596626,
+    "cameraLongitude": 10.711527353299454,
     "state": "NEW",
     "description": "Illegally Parked Vehicle",
     "decisionType": {
@@ -190,8 +190,8 @@
   {
     "acquisitionTime": "2024-11-12T11:17:37Z",
     "mediaUrl": "trash/trash03.jpg",
-    "cameraLatitude": 39.970734,
-    "cameraLongitude": -86.128939,
+    "cameraLatitude": 52.4192422596626,
+    "cameraLongitude": 10.711527353299454,
     "state": "NEW",
     "description": "Illegal Waste Disposal",
     "decisionType": {
@@ -204,8 +204,8 @@
   {
     "acquisitionTime": "2024-11-12T11:17:47Z",
     "mediaUrl": "trash/weed02.jpg",
-    "cameraLatitude": 39.974686,
-    "cameraLongitude": -86.141046,
+    "cameraLatitude": 52.420425461560846,
+    "cameraLongitude": 10.716852397594621,
     "state": "NEW",
     "description": "Wild Weed Growth",
     "decisionType": {
@@ -218,8 +218,8 @@
   {
     "acquisitionTime": "2024-10-31T14:59:57Z",
     "mediaUrl": "trash/weed03.jpg",
-    "cameraLatitude": 39.978309,
-    "cameraLongitude": -86.133787,
+    "cameraLatitude": 52.41823673472538,
+    "cameraLongitude": 10.715323538553188,
     "state": "NEW",
     "description": "Wild Weed Growth",
     "decisionType": {
@@ -232,8 +232,8 @@
   {
     "acquisitionTime": "2024-10-31T15:00:08Z",
     "mediaUrl": "trash/weed04.jpg",
-    "cameraLatitude": 39.985589,
-    "cameraLongitude": -86.131719,
+    "cameraLatitude": 52.418220376118846,
+    "cameraLongitude": 10.714615435416102,
     "state": "NEW",
     "description": "Wild Weed Growth",
     "decisionType": {
@@ -246,8 +246,8 @@
   {
     "acquisitionTime": "2024-11-12T11:16:57Z",
     "mediaUrl": "trash/trash01.mp4",
-    "cameraLatitude": 39.97078,
-    "cameraLongitude": -86.127168,
+    "cameraLatitude": 52.41877983701635,
+    "cameraLongitude": 10.716868490852283,
     "state": "ACCEPTED",
     "description": "Illegal Waste Dump",
     "decisionType": {
@@ -260,8 +260,8 @@
   {
     "acquisitionTime": "2024-11-12T11:18:07Z",
     "mediaUrl": "trash/trash02.jpg",
-    "cameraLatitude": 39.975163,
-    "cameraLongitude": -86.12691,
+    "cameraLatitude": 52.419525773837805,
+    "cameraLongitude": 10.716852397599167,
     "state": "ACCEPTED",
     "description": "Illegal Waste Disposal",
     "decisionType": {
@@ -274,8 +274,8 @@
   {
     "acquisitionTime": "2024-11-12T11:17:57Z",
     "mediaUrl": "trash/trashContainer01.jpg",
-    "cameraLatitude": 39.97227,
-    "cameraLongitude": -86.151024,
+    "cameraLatitude": 52.419525773837805,
+    "cameraLongitude": 10.716852397599167,
     "state": "ACCEPTED",
     "description": "Overfilled Trash Bin",
     "decisionType": {
@@ -288,8 +288,8 @@
   {
     "acquisitionTime": "2024-10-31T15:00:18Z",
     "mediaUrl": "trash/illegalParking02.jpg",
-    "cameraLatitude": 39.97078,
-    "cameraLongitude": -86.127168,
+    "cameraLatitude": 52.41860643761423,
+    "cameraLongitude": 10.717791170697575,
     "state": "REJECTED",
     "description": "Illegally Parked Vehicle",
     "decisionType": {
@@ -302,8 +302,8 @@
   {
     "acquisitionTime": "2024-11-11T18:42:37Z",
     "mediaUrl": "trash/trashContainer02.mp4",
-    "cameraLatitude": 39.978309,
-    "cameraLongitude": -86.133787,
+    "cameraLatitude": 52.41989546591886,
+    "cameraLongitude": 10.716895312940808,
     "state": "NEW",
     "description": "Overfilled Trash Bin",
     "decisionType": {
