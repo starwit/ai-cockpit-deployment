@@ -65,9 +65,9 @@ The components of Starwit's implementation of AI cockpit can be found in the fol
 For more details about AI Cockpit visit project page: https://www.kicockpit.eu/
 
 ## Contact & Contribution
-This project was partly funded by the government of the federal republic of Germany. It is part of a research project aiming to keep _humans in command_ and is organized by the Federal Ministry of Labour and Social Affairs.
+The “KI-Cockpit” (AI Cockpit) project was funded by the Federal Ministry of Labor and Social Affairs and executed by the nexus Institute, Aalen University, the University of Stuttgart, Chemistree, Caritas Dortmund & Starwit Technologies with the support of Awesome Technologies Innovationslabor, the Institute for Innovation and Technology (iit) at VDI/VDE Innovation + Technik and keytec.
 
-![BMAS](doc/BMAS_Logo.svg)
+<img src="doc/foerderlogo.png" alt="BMAS Logo" style="width:33%; height:auto;">
 
 # License
 
