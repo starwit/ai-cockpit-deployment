@@ -36,10 +36,15 @@ services:
       /usr/bin/mc policy set public myminio/anomalies;
       /usr/bin/ls -al /binary_data;
       /usr/bin/mc cp --recursive /binary_data/* myminio/anomalies;
+      /usr/bin/mc mb myminio/sboms;
+      /usr/bin/mc policy set public myminio/sboms;
+      /usr/bin/ls -al /sboms;
+      /usr/bin/mc cp --recursive /sboms/* myminio/sboms;
       exit 0;
       "
     volumes:
       - ./scenariodata/binary_data/${scenario}:/binary_data
+      - ./scenariodata/module_info/${scenario}:/sboms
 
 volumes:
   data1-1:

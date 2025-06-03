@@ -47,7 +47,7 @@ services:
       - "5050:80"
 
   aicockpit:
-    image: starwitorg/ai-cockpit:0.2.10-4-kic
+    image: starwitorg/ai-cockpit:1.0.7
     environment:
       SPRING_PROFILES_ACTIVE: dev
       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/ai-cockpit"
@@ -61,6 +61,7 @@ services:
       AIAPI_TRANSPARENCY_ENABLED: true
       AIAPI_TRANSPARENCY_URI: http://transparency-api:8080
       SCENARIO_SETUP: true
+      SCENARIO_IMPORTFOLDER: /scenariodata/traffic
     volumes:
       - demodata:/scenariodata/traffic
     ports:
