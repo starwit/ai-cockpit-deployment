@@ -38,5 +38,29 @@
         "module": {
             "name": "Anomaly Detection"
         }
+    },
+    {
+        "name": "Notify Public Order Office",
+        "description": "",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Anomaly Detection"
+        }
+    },
+    {
+        "name": "Generate Task List and Route",
+        "description": "",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Anomaly Detection"
+        }
+    },
+    {
+        "name": "Notify Towing Service",
+        "description": "",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Anomaly Detection"
+        }
     }
 ]

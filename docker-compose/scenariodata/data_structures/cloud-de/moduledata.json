@@ -24,8 +24,7 @@
       {
         "id": 1
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 1,
@@ -44,8 +43,7 @@
       {
         "id": 2
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 2,
@@ -71,8 +69,7 @@
       {
         "id": 8
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 3,
@@ -91,8 +88,7 @@
       {
         "id": 1
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 4,
@@ -122,8 +118,7 @@
       {
         "id": 5
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 5,
@@ -150,8 +145,7 @@
       {
         "id": 6
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 6,
@@ -178,8 +172,7 @@
       {
         "id": 1
       }
-    ],
-    "submodules" :[]
+    ]    
   },
   {
     "id": 7,
@@ -202,8 +195,8 @@
         "url": "sbom-samples/aic-sbom-backend.json"
       }
     },
-    "successors": [],
-    "submodules" :[]
+    "successors": []
+    
   },
   {
     "id": 8,
@@ -230,7 +223,6 @@
       {
         "id": 0
       }
-    ],
-    "submodules" :[]
+    ]    
   }
 ]

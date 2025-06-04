@@ -1,46 +1,67 @@
 [
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/DatabaseCorrupt.jpg",
-    "actionVisualizationUrl": "anomalies/DatabaseCorrupt_recovery.jpg",
+    "mediaUrl": "anomalies/cloud/DatabaseCorrupt.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/DatabaseCorrupt_recovery.jpg",
     "state": "NEW",
     "description": "Database corrupt",
     "decisionType": {
       "name": "Corrupt data"
     },
-    "action": []
+    "module": {
+      "name": "Application Bug Identifier"
+    }
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/DNSBug.jpg",
-    "actionVisualizationUrl": "anomalies/DNS_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/DNSBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/DNS_Recovery.jpg",
     "state": "NEW",
     "description": "DNS resolution not working",
     "decisionType": {
       "name": "Configuration issue"
     },
-    "action": []
+    "module": {
+      "name": "Application Bug Identifier"
+    }
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/FunctionalServiceBug.jpg",
-    "actionVisualizationUrl": "anomalies/FunctionalService_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/FunctionalServiceBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/FunctionalService_Recovery.jpg",
     "state": "NEW",
     "description": "Buggy lambda service",
     "decisionType": {
       "name": "Application bug"
     },
-    "action": []
+    "module": {
+      "name": "Application Bug Identifier"
+    }
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "anomalies/ApplicationBug.jpg",
-    "actionVisualizationUrl": "anomalies/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Bug in application",
     "decisionType": {
       "name": "Application bug"
     },
-    "action": []
+    "module": {
+      "name": "Application Bug Identifier"
+    }
+  },
+  {
+    "acquisitionTime": "DATETIME",
+    "mediaUrl": "anomalies/cloud/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/Application_Recovery.jpg",
+    "state": "NEW",
+    "description": "Compromised application",
+    "decisionType": {
+      "name": "Application compromised"
+    },
+    "module": {
+      "name": "Application Bug Identifier"
+    }
   }
 ]

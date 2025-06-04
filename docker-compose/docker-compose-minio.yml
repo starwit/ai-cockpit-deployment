@@ -40,11 +40,15 @@ services:
       /usr/bin/mc policy set public myminio/sboms;
       /usr/bin/ls -al /sboms;
       /usr/bin/mc cp --recursive /sboms/* myminio/sboms;
+      /usr/bin/mc mb myminio/app;
+      /usr/bin/mc policy set public myminio/app;
+      /usr/bin/mc cp --recursive /app/* myminio/app/;
       exit 0;
       "
     volumes:
       - ./scenariodata/binary_data/${scenario}:/binary_data
       - ./scenariodata/module_info/${scenario}:/sboms
+      - ./scenariodata/application_data/${scenario}:/app
 
 volumes:
   data1-1:

@@ -1,7 +1,7 @@
 [
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/accident01.mp4",
+    "mediaUrl": "anomalies/traffic/accident01.mp4",
     "cameraLatitude": 39.978355,
     "cameraLongitude": -86.131626,
     "state": "NEW",
@@ -12,7 +12,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/dangerousdrivingbehaviour01.mp4",
+    "mediaUrl": "anomalies/traffic/dangerousdrivingbehaviour01.mp4",
     "cameraLatitude": 39.975186,
     "cameraLongitude": -86.127030,
     "state": "NEW",
@@ -23,7 +23,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/accident02.mp4",
+    "mediaUrl": "anomalies/traffic/accident02.mp4",
     "cameraLatitude": 39.970772,
     "cameraLongitude": -86.127145,
     "state": "NEW",
@@ -34,7 +34,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/dangerousdrivingbehaviour02.mp4",
+    "mediaUrl": "anomalies/traffic/dangerousdrivingbehaviour02.mp4",
     "cameraLatitude": 39.978451,
     "cameraLongitude": -86.131798,
     "state": "NEW",
@@ -45,7 +45,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/dangerousdrivingbehaviour03.mp4",
+    "mediaUrl": "anomalies/traffic/dangerousdrivingbehaviour03.mp4",
     "cameraLatitude": 39.978355,
     "cameraLongitude": -86.131626,
     "state": "NEW",
@@ -56,7 +56,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/accident02.mp4",
+    "mediaUrl": "anomalies/traffic/accident02.mp4",
     "cameraLatitude": 39.975186,
     "cameraLongitude": -86.127030,
     "state": "NEW",
@@ -67,7 +67,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/trafficjam01.mp4",
+    "mediaUrl": "anomalies/traffic/trafficjam01.mp4",
     "cameraLatitude": 39.956553032794865,
     "cameraLongitude": -86.12674676463367,
     "state": "NEW",
@@ -78,7 +78,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/dangerousdrivingbehaviour04.mp4",
+    "mediaUrl": "anomalies/traffic/dangerousdrivingbehaviour04.mp4",
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
     "state": "NEW",
@@ -89,7 +89,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/disabled01.mp4",
+    "mediaUrl": "anomalies/traffic/disabled01.mp4",
     "cameraLatitude": 39.978473,
     "cameraLongitude": -86.127017,
     "state": "NEW",
@@ -100,7 +100,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/firstresponderops01.mp4",
+    "mediaUrl": "anomalies/traffic/firstresponderops01.mp4",
     "cameraLatitude": 39.978451,
     "cameraLongitude": -86.131798,
     "state": "NEW",
@@ -111,7 +111,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/firstresponderops01.mp4",
+    "mediaUrl": "anomalies/traffic/firstresponderops01.mp4",
     "cameraLatitude": 39.95841772807577,
     "cameraLongitude": -86.12682180111628,
     "state": "NEW",
@@ -122,7 +122,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "traffic/trafficjam02.mp4",
+    "mediaUrl": "anomalies/traffic/trafficjam02.mp4",
     "cameraLatitude": 39.978451,
     "cameraLongitude": -86.131798,
     "state": "NEW",
@@ -133,7 +133,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:16:47Z",
-    "mediaUrl": "trash/weed01.jpg",
+    "mediaUrl": "anomalies/trash/weed01.jpg",
     "cameraLatitude": 52.41989546591886,
     "cameraLongitude": 10.716895312940808,
     "state": "NEW",
@@ -147,7 +147,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:16:36Z",
-    "mediaUrl": "trash/trafficSign01.jpg",
+    "mediaUrl": "anomalies/trash/trafficSign01.jpg",
     "cameraLatitude": 52.419687281926564,
     "cameraLongitude": 10.714074802351732,
     "state": "NEW",
@@ -161,7 +161,7 @@
   },
   {
     "acquisitionTime": "2024-11-11T18:42:47Z",
-    "mediaUrl": "trash/illegalParking01.jpg",
+    "mediaUrl": "anomalies/trash/illegalParking01.jpg",
     "cameraLatitude": 52.41858656778023,
     "cameraLongitude": 10.716852397594621,
     "state": "NEW",
@@ -175,7 +175,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:17:07Z",
-    "mediaUrl": "trash/illegalParking03.jpg",
+    "mediaUrl": "anomalies/trash/illegalParking03.jpg",
     "cameraLatitude": 52.4192422596626,
     "cameraLongitude": 10.711527353299454,
     "state": "NEW",
@@ -189,7 +189,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:17:37Z",
-    "mediaUrl": "trash/trash03.jpg",
+    "mediaUrl": "anomalies/trash/anomalies/trash03.jpg",
     "cameraLatitude": 52.4192422596626,
     "cameraLongitude": 10.711527353299454,
     "state": "NEW",
@@ -203,7 +203,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:17:47Z",
-    "mediaUrl": "trash/weed02.jpg",
+    "mediaUrl": "anomalies/trash/weed02.jpg",
     "cameraLatitude": 52.420425461560846,
     "cameraLongitude": 10.716852397594621,
     "state": "NEW",
@@ -217,7 +217,7 @@
   },
   {
     "acquisitionTime": "2024-10-31T14:59:57Z",
-    "mediaUrl": "trash/weed03.jpg",
+    "mediaUrl": "anomalies/trash/weed03.jpg",
     "cameraLatitude": 52.41823673472538,
     "cameraLongitude": 10.715323538553188,
     "state": "NEW",
@@ -231,7 +231,7 @@
   },
   {
     "acquisitionTime": "2024-10-31T15:00:08Z",
-    "mediaUrl": "trash/weed04.jpg",
+    "mediaUrl": "anomalies/trash/weed04.jpg",
     "cameraLatitude": 52.418220376118846,
     "cameraLongitude": 10.714615435416102,
     "state": "NEW",
@@ -245,7 +245,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:16:57Z",
-    "mediaUrl": "trash/trash01.mp4",
+    "mediaUrl": "anomalies/trash/trash01.mp4",
     "cameraLatitude": 52.41877983701635,
     "cameraLongitude": 10.716868490852283,
     "state": "ACCEPTED",
@@ -259,7 +259,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:18:07Z",
-    "mediaUrl": "trash/trash02.jpg",
+    "mediaUrl": "anomalies/trash/trash02.jpg",
     "cameraLatitude": 52.419525773837805,
     "cameraLongitude": 10.716852397599167,
     "state": "ACCEPTED",
@@ -273,7 +273,7 @@
   },
   {
     "acquisitionTime": "2024-11-12T11:17:57Z",
-    "mediaUrl": "trash/trashContainer01.jpg",
+    "mediaUrl": "anomalies/trash/trashContainer01.jpg",
     "cameraLatitude": 52.419525773837805,
     "cameraLongitude": 10.716852397599167,
     "state": "ACCEPTED",
@@ -287,7 +287,7 @@
   },
   {
     "acquisitionTime": "2024-10-31T15:00:18Z",
-    "mediaUrl": "trash/illegalParking02.jpg",
+    "mediaUrl": "anomalies/trash/illegalParking02.jpg",
     "cameraLatitude": 52.41860643761423,
     "cameraLongitude": 10.717791170697575,
     "state": "REJECTED",
@@ -301,7 +301,7 @@
   },
   {
     "acquisitionTime": "2024-11-11T18:42:37Z",
-    "mediaUrl": "trash/trashContainer02.mp4",
+    "mediaUrl": "anomalies/trash/trashContainer02.mp4",
     "cameraLatitude": 52.41989546591886,
     "cameraLongitude": 10.716895312940808,
     "state": "NEW",
@@ -315,7 +315,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "trash/trash01.mp4",
+    "mediaUrl": "anomalies/trash/trash01.mp4",
     "cameraLatitude": 52.416188,
     "cameraLongitude": 10.7276736,
     "state": "NEW",
@@ -329,7 +329,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "trash/trash01.mp4",
+    "mediaUrl": "anomalies/trash/trash01.mp4",
     "cameraLatitude": 52.416188,
     "cameraLongitude": 10.7276736,
     "state": "NEW",
@@ -343,7 +343,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "trash/trash02.jpg",
+    "mediaUrl": "anomalies/trash/trash02.jpg",
     "cameraLatitude": 52.42025475930882,
     "cameraLongitude": 10.724712299498925,
     "state": "NEW",
@@ -357,7 +357,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "trash/reschedule.jpg",
+    "mediaUrl": "anomalies/trash/reschedule.jpg",
     "state": "NEW",
     "description": "Updated collection dispatch",
     "decisionType": {
@@ -369,8 +369,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "cloud/DatabaseCorrupt.jpg",
-    "actionVisualizationUrl": "cloud/DatabaseCorrupt_recovery.jpg",
+    "mediaUrl": "anomalies/cloud/DatabaseCorrupt.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/DatabaseCorrupt_recovery.jpg",
     "state": "NEW",
     "description": "Database corrupt",
     "decisionType": {
@@ -382,8 +382,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "cloud/DNSBug.jpg",
-    "actionVisualizationUrl": "cloud/DNS_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/DNSBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/DNS_Recovery.jpg",
     "state": "NEW",
     "description": "DNS resolution not working",
     "decisionType": {
@@ -395,8 +395,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "cloud/FunctionalServiceBug.jpg",
-    "actionVisualizationUrl": "cloud/FunctionalService_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/FunctionalServiceBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/FunctionalService_Recovery.jpg",
     "state": "NEW",
     "description": "Buggy lambda service",
     "decisionType": {
@@ -408,8 +408,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "cloud/ApplicationBug.jpg",
-    "actionVisualizationUrl": "cloud/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Bug in application",
     "decisionType": {
@@ -421,8 +421,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "cloud/ApplicationBug.jpg",
-    "actionVisualizationUrl": "cloud/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/cloud/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/cloud/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Compromised application",
     "decisionType": {
@@ -434,7 +434,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-48.png",
+    "mediaUrl": "anomalies/overcooked/tachometer_2025-04-10_09-52-48.png",
     "state": "NEW",
     "description": "Überforderung",
     "decisionType": {
@@ -446,7 +446,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-41.png",
+    "mediaUrl": "anomalies/overcooked/tachometer_2025-04-10_09-52-41.png",
     "state": "NEW",
     "description": "Überforderung",
     "decisionType": {
@@ -458,7 +458,7 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "overcooked/tachometer_2025-04-10_09-52-18.png",
+    "mediaUrl": "anomalies/overcooked/tachometer_2025-04-10_09-52-18.png",
     "state": "NEW",
     "description": "Unterforderung",
     "decisionType": {
@@ -470,8 +470,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Policy Control Function - high latency",
     "decisionType": {
@@ -483,8 +483,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Compromised customer data",
     "decisionType": {
@@ -496,8 +496,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Balanced application too slow",
     "decisionType": {
@@ -509,8 +509,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Link failure predicted - VNF will go down",
     "decisionType": {
@@ -522,8 +522,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "MEC unbalanced",
     "decisionType": {
@@ -535,8 +535,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "MEC function restart necessary",
     "decisionType": {
@@ -548,8 +548,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Re-route necessary",
     "decisionType": {
@@ -561,8 +561,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "telco/ApplicationBug.jpg",
-    "actionVisualizationUrl": "telco/Application_Recovery.jpg",
+    "mediaUrl": "anomalies/telco/ApplicationBug.jpg",
+    "actionVisualizationUrl": "anomalies/telco/Application_Recovery.jpg",
     "state": "NEW",
     "description": "Similarity detected",
     "decisionType": {
@@ -574,8 +574,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "factory/zaehler.jpg",
-    "actionVisualizationUrl": "factory/riss_zerlegt.png",
+    "mediaUrl": "anomalies/factory/zaehler.jpg",
+    "actionVisualizationUrl": "anomalies/factory/riss_zerlegt.png",
     "state": "NEW",
     "description": "Slow down in counting controller",
     "decisionType": {
@@ -587,8 +587,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "factory/fraeskopf.jpg",
-    "actionVisualizationUrl": "factory/gesamt.png",
+    "mediaUrl": "anomalies/factory/fraeskopf.jpg",
+    "actionVisualizationUrl": "anomalies/factory/gesamt.png",
     "state": "NEW",
     "description": "Milling component will fail",
     "decisionType": {
@@ -600,8 +600,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "factory/rohmaterial.jpg",
-    "actionVisualizationUrl": "factory/gesamt.png",
+    "mediaUrl": "anomalies/factory/rohmaterial.jpg",
+    "actionVisualizationUrl": "anomalies/factory/gesamt.png",
     "state": "NEW",
     "description": "Insuffcient raw material",
     "decisionType": {
@@ -613,8 +613,8 @@
   },
   {
     "acquisitionTime": "DATETIME",
-    "mediaUrl": "factory/material.jpg",
-    "actionVisualizationUrl": "factory/topview.png",
+    "mediaUrl": "anomalies/factory/material.jpg",
+    "actionVisualizationUrl": "anomalies/factory/topview.png",
     "state": "NEW",
     "description": "Multiple optimization opportunities",
     "decisionType": {

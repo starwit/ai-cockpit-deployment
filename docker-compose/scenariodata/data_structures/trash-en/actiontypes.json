@@ -1,47 +1,50 @@
 [
-  {
-    "name": "Notify Public Order Office",
-    "description": "",
-    "executionPolicy": "WITHCHECK",
-    "action": [],
-    "module": {
-      "name": "Anomaly Detection"
+    {
+        "name": "Notify Parks Department",
+        "description": "",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Waste Incident Classifier"
+        }
+    },
+    {
+        "name": "Notify Patrol Vehicle",
+        "description": "",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Waste Incident Classifier"
+        }
+    },
+    {
+        "name": "Adapt shift plan",
+        "description": "Adapt next shift plan, to address issue",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Waste Incident Classifier"
+        }
+    },
+    {
+        "name": "Send clearing team",
+        "description": "Send team for immediate incident handling",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Waste Incident Classifier"
+        }
+    },
+    {
+        "name": "Update dispatch",
+        "description": "Update trash collection dispatch",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Waste Collection Planer"
+        }
+    },
+    {
+        "name": "Notify authorities",
+        "description": "Send team for immediate incident handling",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Notify authorities"
+        }
     }
-  },
-  {
-    "name": "Generate Task List and Route",
-    "description": "",
-    "executionPolicy": "WITHCHECK",
-    "action": [],
-    "module": {
-      "name": "Anomaly Detection"
-    }
-  },
-  {
-    "name": "Notify Towing Service",
-    "description": "",
-    "executionPolicy": "WITHCHECK",
-    "action": [],
-    "module": {
-      "name": "Anomaly Detection"
-    }
-  },
-  {
-    "name": "Notify Parks Department",
-    "description": "",
-    "executionPolicy": "WITHCHECK",
-    "action": [],
-    "module": {
-      "name": "Anomaly Detection"
-    }
-  },
-  {
-    "name": "Notify Patrol Vehicle",
-    "description": "",
-    "executionPolicy": "WITHCHECK",
-    "action": [],
-    "module": {
-      "name": "Anomaly Detection"
-    }
-  }
 ]

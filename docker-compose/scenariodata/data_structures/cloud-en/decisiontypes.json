@@ -2,8 +2,7 @@
     {
         "name": "Configuration issue",
         "description": "Configuration issue prevents customers using application",
-        "decision": [],
-        "actionType": [
+        "actionTypes": [
             {
                 "name": "Put App to maintenance mode"
             },
@@ -12,14 +11,13 @@
             }
         ],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Corrupt data",
         "description": "Application displays corrupt data to customers",
-        "decision": [],
-        "actionType": [
+        "actionTypes": [
             {
                 "name": "Put App to maintenance mode"
             },
@@ -31,14 +29,13 @@
             }
         ],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Application bug",
         "description": "Application bug",
-        "decision": [],
-        "actionType": [
+        "actionTypes": [
             {
                 "name": "Put App to maintenance mode"
             },
@@ -53,7 +50,31 @@
             }
         ],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
+    },
+    {
+        "name": "Too many log message",
+        "description": "An application is flooding log messages",
+        "module": {
+            "name": "Application Bug Identifier"
+        },
+        "actionTypes": [
+            {
+                "name": "Restart Application"
+            }
+        ]
+    },
+    {
+        "name": "Application compromised",
+        "description": "An application has been successfully attacked",
+        "module": {
+            "name": "Application Bug Identifier"
+        },
+        "actionTypes": [
+            {
+                "name": "Shutdown application"
+            }
+        ]
     }
 ]

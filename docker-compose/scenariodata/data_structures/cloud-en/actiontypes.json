@@ -1,84 +1,106 @@
 [
     {
+        "name": "Shutdown application",
+        "description": "An affected application needs to be shutdown immediately",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Application Bug Identifier"
+        }
+    },
+    {
+        "name": "Isolate application",
+        "description": "An affected application needs to be isolated",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Application Bug Identifier"
+        }
+    },
+    {
+        "name": "Update Application",
+        "description": "An update can fix appliction bug",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Application Bug Identifier"
+        }
+    },
+    {
+        "name": "File bug report",
+        "description": "Detected bug will to be reported to dev team",
+        "executionPolicy": "WITHCHECK",
+        "module": {
+            "name": "Application Bug Identifier"
+        }
+    },
+    {
         "name": "Put App to maintenance mode",
         "description": "Application is set to maintenance mode and is not reachable for customers",
         "executionPolicy": "WITHCHECK",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Restart Application",
         "description": "Restart Application/Module",
         "executionPolicy": "WITHCHECK",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
-    },    
+    },
     {
         "name": "Patch Application/Module",
         "description": "Create patch for application/module",
         "executionPolicy": "MANUAL",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Adapt configuration",
         "description": "Adapt configuration for a cloud element",
         "executionPolicy": "AUTOMATIC",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Customer messaging",
         "description": "Message all customers",
         "executionPolicy": "WITHCHECK",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Backup database",
         "description": "Create new database backup",
         "executionPolicy": "AUTOMATIC",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Recover database backup",
         "description": "Recover database backup",
         "executionPolicy": "AUTOMATIC",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Increase log level",
         "description": "Increase log level",
         "executionPolicy": "AUTOMATIC",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     },
     {
         "name": "Decrease log level",
         "description": "Decrease log level",
         "executionPolicy": "AUTOMATIC",
-        "action": [],
         "module": {
-            "name": "Anomaly Detection"
+            "name": "Application Bug Identifier"
         }
     }
-
 ]
