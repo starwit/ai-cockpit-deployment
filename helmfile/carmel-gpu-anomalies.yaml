@@ -2,9 +2,6 @@ repositories:
   - name: starwitorg
     url: registry-1.docker.io/starwitorg
     oci: true
-  - name: bitnamicharts
-    url: registry-1.docker.io/bitnamicharts
-    oci: true
   - name: starwit-internal
     url: https://helm.internal.starwit-infra.de
     username: chartmuseum
@@ -20,9 +17,6 @@ environments:
         redis:
           host: test-redis-master.sae
           port: 6379
-        minio:
-          user: minioadmin
-          password: {{ requiredEnv "MINIO_PASSWORD" }}
         pullSecret: {{ requiredEnv "PULL_SECRET" }}
   local:
     values:
@@ -30,9 +24,6 @@ environments:
         redis:
           host: 192.168.178.66
           port: 6379
-        minio:
-          user: minioadmin
-          password: {{ requiredEnv "MINIO_PASSWORD" }}
         pullSecret: {{ requiredEnv "PULL_SECRET" }}
 
 ---
@@ -65,7 +56,7 @@ releases:
     installed: true
     namespace: {{ .Values.namespace }}
     chart: starwit-internal/sae-anomaly-detection
-    version: 1.0.1
+    version: 1.1.0
     values:
       - config:
           log_level: INFO
@@ -83,8 +74,7 @@ releases:
           model:
             parameters_path: model/parameters.json
             weights_path: model/model_weights.pth
-            background_path: model/frame.pth
         useGpu: true
         weights:
-          imageTag: cnnsymmetricprob-rangelinesmedicaldr-20250409
+          imageTag: MobileNet_v3_asymmetric_prob-20250625
         existingPullSecret: anomaly-post-processing-pull-secret
