@@ -1,0 +1,174 @@
+repositories:
+  - name: starwitorg
+    url: registry-1.docker.io/starwitorg
+    oci: true
+  - name: bitnamicharts
+    url: registry-1.docker.io/bitnamicharts
+    oci: true 
+
+helmDefaults:
+  wait: true
+
+environments:
+  default:
+    values:
+      - namespace: aic
+        hostname: cluster.local
+        tls: false
+        cockpit_db_password: {{ requiredEnv "COCKPIT_DB_PW" }}
+        auth:
+          enabled: false
+          clientId: aicockpit       
+          clientSecret: aicockpit
+          realmAdminPw: aicockpit
+          functionUserPw: password
+          keycloakRealmUrlInternal: http://keycloak/realms/aicockpit
+          keycloakRealmUrlExternal: https://auth.cluster.local/realms/aicockpit
+        minio:
+          user: minioadmin
+          password: minioadmin
+        sampledata: 
+          enabled: true
+          importFolder: trash
+          language: de
+
+  waste-staging:
+    values:
+      - namespace: aic
+        hostname: staging.data-wolfsburg.de
+        tls: true
+        cockpit_db_password: {{ requiredEnv "COCKPIT_DB_PW" }}
+        auth:
+          enabled: true
+          clientId: urbalytix
+          clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
+          realmAdminPw: aicockpit
+          functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
+          keycloakRealmUrlInternal: https://auth.staging.data-wolfsburg.de/realms/urbalytix
+          keycloakRealmUrlExternal: https://auth.staging.data-wolfsburg.de/realms/urbalytix
+        minio:
+          user: minioadmin
+          password: {{ requiredEnv "MINIO_PW" }}
+        sampledata: 
+          enabled: false
+          importFolder: trash
+          language: de
+
+---
+releases:
+  - name: config-data
+    namespace: {{ .Values.namespace }}
+    chart: ./config-data
+    installed: true
+    values:
+      - config-data/values.gotmpl      
+
+  - name: aicockpit 
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/ai-cockpit-chart
+    version: "1.0.9"
+    values:
+      - image:
+          tag: "1.0.9"
+        app:
+          context_path: ""
+        auth:
+          enabled: {{ .Values.auth.enabled}}
+          keycloakRealmUrlInternal: {{ .Values.auth.keycloakRealmUrlInternal}}
+          keycloakRealmUrlExternal: {{ .Values.auth.keycloakRealmUrlExternal}}
+          clientId: {{ .Values.auth.clientId }}
+          clientSecret: {{ .Values.auth.clientSecret }}
+        postgresql:
+          auth:
+            database: aicockpit
+            username: aicockpit
+            password: {{ .Values.cockpit_db_password }}
+        ingress:
+          enabled: true
+          className: traefik
+          hosts:
+            - host: cockpit.{{ .Values.hostname }}
+              paths:
+                - path: "/"
+                  pathType: ImplementationSpecific
+          tls:
+            - hosts:
+              - cockpit.{{ .Values.hostname }}
+              secretName: aic.{{ .Values.hostname }}
+              annotations: 
+                cert-manager.io/cluster-issuer: letsencrypt-prod
+                traefik.ingress.kubernetes.io/router.tls: "true"
+        minio:
+          user: {{ .Values.minio.user }}
+          password: {{ .Values.minio.password }}
+          endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
+        sampledata:
+          enabled: {{ .Values.sampledata.enabled }}
+          importFolder: {{ .Values.sampledata.importFolder }}
+          language: {{ .Values.sampledata.language }}
+        aiapi:
+          transparency:
+            enabled: true
+            uri: http://transparency-api-starwit-aicapi-transparency-chart.{{ .Values.namespace }}.svc.cluster.local:8080
+        sbom:
+          enabled: true
+          generator:
+            uri: http://sbom-generator-sbom-generator-chart.{{ .Values.namespace }}.svc.cluster.local:8080
+        extraEnv: |
+          - name: DECISION_TYPE_RANDOM
+            value: "true"
+          - name: AUTOMATION
+            value: MANUAL
+          - name: SPRING_AUTOCONFIGURE_EXCLUDE
+            value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+  - name: minio
+    namespace: {{ .Values.namespace }}
+    chart: oci://registry-1.docker.io/bitnamicharts/minio
+    installed: true
+    version: 17.0.21
+    values:
+      - auth:
+          rootUser: {{ .Values.minio.user }}
+          rootPassword: {{ .Values.minio.password }}
+      - ingress:
+          enabled: false
+          hostname: minio.{{ .Values.hostname }}
+          tls: true
+          selfSigned: {{ eq .Environment.Name "default" }}
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+
+  - name: sbom-generator
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/sbom-generator-chart
+    version: 0.0.12
+
+  - name: transparency-api
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/starwit-aicapi-transparency-chart
+    version: 1.0.9
+    values:
+      - app:
+          context_path: ""
+          service_uri: http://transparency-api-starwit-aicapi-transparency-chart:8080
+          cockpit:
+            hostname: https://cockpit.staging.data-wolfsburg.de/
+          minio:
+            endpoint: http://minio.{{ .Values.namespace }}.svc.cluster.local:9000
+            username: minioadmin
+            password: {{ .Values.minio.password }}
+            bucket: sboms
+      - auth:
+          enabled: true
+          #auth_url: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}/realms/aicockpit/protocol/openid-connect/token
+          auth_url: "{{ .Values.auth.keycloakRealmUrlInternal }}/protocol/openid-connect/token"
+          client_id: {{ .Values.auth.clientId }}
+          username: function.user
+          password: {{ .Values.auth.functionUserPw }}
+      - sampledata:
+          enabled: true
+          importFolder: trash
+          language: de    

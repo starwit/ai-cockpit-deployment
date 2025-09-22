@@ -30,7 +30,10 @@ environments:
         minio:
           user: minioadmin
           password: minioadmin
-        sampledata_import: true
+        sampledata: 
+          enabled: true
+          importFolder: traffic
+          language: en
         anomalyProcessing: true
         pullSecret: {{ requiredEnv "PULL_SECRET" }} # Starwit's internal registry
   aic-dev:
@@ -79,14 +82,14 @@ environments:
 ---
 releases:
   - name: config-data
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: ./config-data
     installed: true
     values:
       - config-data/values.gotmpl
 
   - name: landing-page
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: oci://registry-1.docker.io/bitnamicharts/apache
     version: 11.3.2
     installed: {{ .Values.landing_page}}
@@ -106,10 +109,10 @@ releases:
           selfSigned: false
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
-            traefik.ingress.kubernetes.io/router.tls: "true"         
+            traefik.ingress.kubernetes.io/router.tls: "true"
 
   - name: aicockpit 
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: starwitorg/ai-cockpit-chart
     version: "1.0.7"
     values:
@@ -165,7 +168,7 @@ releases:
             value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 
   - name: keycloak
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: oci://registry-1.docker.io/bitnamicharts/keycloak
     installed: true
     version: "21.0.3"  
@@ -200,7 +203,7 @@ releases:
             cpu: 100m
 
   - name: minio
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: oci://registry-1.docker.io/bitnamicharts/minio
     installed: true
     version: "14.8.5"  
@@ -218,7 +221,7 @@ releases:
 
   - name: valkey
     installed: {{ .Values.anomalyProcessing }}
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: bitnamicharts/valkey
     version: 2.2.0
     values:
@@ -238,7 +241,7 @@ releases:
 
   - name: anomaly-post-processing
     installed: {{ .Values.anomalyProcessing }}
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: starwit-internal/anomaly-post-processing
     version: 4.0.1
     values:
@@ -272,13 +275,13 @@ releases:
 
   - name: sbom-generator
     installed: true
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: starwitorg/sbom-generator-chart
     version: 0.0.10
 
   - name: transparency-api
     installed: true
-    namespace: {{ .Values.namespace }}
+    namespace: "{{ .Values.namespace }}"
     chart: starwitorg/starwit-aicapi-transparency-chart
     version: 1.0.0
     values:
