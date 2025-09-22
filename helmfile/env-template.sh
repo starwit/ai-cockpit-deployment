@@ -8,3 +8,5 @@ export PULL_SECRET=secret # Starwit's internal Docker registry
 export HELM_SECRET=secret # Starwit's internal Helm registry
 
 export FUNCTION_USER_PW=pw
+
+export COCKPIT_DB_PW=aicockpit
