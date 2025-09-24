@@ -139,6 +139,37 @@ releases:
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
 
+  - name: aic-connector-cv
+    installed: true
+    namespace: "{{ .Values.namespace }}"
+    chart: starwitorg/aic-connector-cv-chart
+    version: 0.1.14
+    values:
+      - image:
+          tag: "0.1.14"
+      - config:
+          log_level: DEBUG
+          http_output:
+            target_endpoint: http{{- if .Values.tls }}s{{- end }}://cockpit.{{ .Values.hostname }}/api/aic/decision
+            module_name: Starwit Object Detector
+            minio:
+              endpoint: "minio:9000"
+              user: minioadmin
+              password: {{ .Values.minio.password }}
+              secure: false
+              bucket_name: trash
+            auth:
+              token_endpoint_url: "{{ .Values.auth.keycloakRealmUrlInternal }}/protocol/openid-connect/token"
+              client_id: {{ .Values.auth.clientId }}
+              username: function.user
+              password: {{ .Values.auth.functionUserPw }}
+          redis_input:
+            host: valkey-primary.observatory-data
+            port: 6379
+            stream_ids:
+              - was-pod01
+            stream_prefix: detectionselector
+
   - name: sbom-generator
     installed: true
     namespace: {{ .Values.namespace }}
