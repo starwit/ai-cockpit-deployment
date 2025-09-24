@@ -167,7 +167,7 @@ releases:
           redis_input:
             host: valkey-primary.observatory-data
             port: 6379
-            stream_ids: 
+            stream_ids:
               - was-pod01
             stream_prefix: detectionselector
 
