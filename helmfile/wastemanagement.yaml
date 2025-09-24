@@ -159,7 +159,6 @@ releases:
               secure: false
               bucket_name: trash
             auth:
-              #token_endpoint_url: http{{- if .Values.tls }}s{{- end }}://auth.{{ .Values.hostname }}/realms/aicockpit/protocol/openid-connect/token
               token_endpoint_url: "{{ .Values.auth.keycloakRealmUrlInternal }}/protocol/openid-connect/token"
               client_id: {{ .Values.auth.clientId }}
               username: function.user
