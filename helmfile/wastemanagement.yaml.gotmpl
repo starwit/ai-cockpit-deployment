@@ -2,9 +2,8 @@ repositories:
   - name: starwitorg
     url: registry-1.docker.io/starwitorg
     oci: true
-  - name: bitnamicharts
-    url: registry-1.docker.io/bitnamicharts
-    oci: true 
+  - name: minio
+    url: https://charts.min.io/
 
 helmDefaults:
   wait: true
@@ -15,7 +14,7 @@ environments:
       - namespace: aic
         hostname: cluster.local
         tls: false
-        cockpit_db_password: {{ requiredEnv "COCKPIT_DB_PW" }}
+        cockpit_db_password: aicockpit
         auth:
           enabled: false
           clientId: aicockpit       
@@ -66,10 +65,11 @@ releases:
   - name: aicockpit 
     namespace: {{ .Values.namespace }}
     chart: starwitorg/ai-cockpit-chart
-    version: "1.0.9"
+    installed: true
+    version: "1.0.13"
     values:
       - image:
-          tag: "1.0.9"
+          tag: "1.0.13"
         app:
           context_path: ""
         auth:
@@ -78,11 +78,11 @@ releases:
           keycloakRealmUrlExternal: {{ .Values.auth.keycloakRealmUrlExternal}}
           clientId: {{ .Values.auth.clientId }}
           clientSecret: {{ .Values.auth.clientSecret }}
-        postgresql:
-          auth:
-            database: aicockpit
-            username: aicockpit
-            password: {{ .Values.cockpit_db_password }}
+        database:
+          hostname: postgres-chart-postgres.{{ .Values.namespace }}.svc.cluster.local
+          database: aicockpit
+          username: aicockpit
+          password: {{ .Values.cockpit_db_password }}
         ingress:
           enabled: true
           className: traefik
@@ -122,27 +122,54 @@ releases:
           - name: SPRING_AUTOCONFIGURE_EXCLUDE
             value: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 
+  - name: postgres
+    installed: true
+    namespace: {{ .Values.namespace }}
+    chart: starwitorg/postgres-chart
+    version: 1.2.6
+    values:
+      - postgresql:
+          password: {{ .Values.cockpit_db_password }}
+        init:
+          enabled: true
+          init_user_db: |
+            -- Create schemata, users and extenions
+            CREATE USER aicockpit WITH PASSWORD '{{ .Values.cockpit_db_password }}';
+            SELECT 'CREATE DATABASE aicockpit owner aicockpit' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'aicockpit')\gexec
+
+          init_tables: |  
+            -- empty
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+
   - name: minio
     namespace: {{ .Values.namespace }}
-    chart: oci://registry-1.docker.io/bitnamicharts/minio
+    chart: minio/minio
     installed: true
-    version: 17.0.21
     values:
-      - auth:
-          rootUser: {{ .Values.minio.user }}
-          rootPassword: {{ .Values.minio.password }}
-      - ingress:
-          enabled: false
-          hostname: minio.{{ .Values.hostname }}
-          tls: true
-          selfSigned: {{ eq .Environment.Name "default" }}
+      - mode: standalone
+        rootUser: {{ .Values.minio.user }}
+        rootPassword: {{ .Values.minio.password }}
+      - consoleIngress:
+          enabled: true
+          hosts:
+            - minio.{{ .Values.hostname }}
+          tls:
+            - hosts:
+              - minio.{{ .Values.hostname }}
+              secretName: minio.{{ .Values.hostname }}
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
 
   - name: aic-connector-cv
-    installed: true
     namespace: "{{ .Values.namespace }}"
     chart: starwitorg/aic-connector-cv-chart
+    installed: true
     version: 0.1.14
     values:
       - image:
@@ -171,13 +198,13 @@ releases:
             stream_prefix: detectionselector
 
   - name: sbom-generator
-    installed: true
+    installed: false
     namespace: {{ .Values.namespace }}
     chart: starwitorg/sbom-generator-chart
     version: 0.0.12
 
   - name: transparency-api
-    installed: true
+    installed: false
     namespace: {{ .Values.namespace }}
     chart: starwitorg/starwit-aicapi-transparency-chart
     version: 1.0.9
