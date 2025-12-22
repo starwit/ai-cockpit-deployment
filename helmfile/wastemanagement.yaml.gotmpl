@@ -156,7 +156,7 @@ releases:
         rootUser: {{ .Values.minio.user }}
         rootPassword: {{ .Values.minio.password }}
       - consoleIngress:
-          enabled: true
+          enabled: false
           hosts:
             - minio.{{ .Values.hostname }}
           tls:
@@ -165,6 +165,9 @@ releases:
               secretName: minio.{{ .Values.hostname }}
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
+        resources:
+          requests:
+            memory: 512Mi
 
   - name: aic-connector-cv
     namespace: "{{ .Values.namespace }}"
@@ -198,13 +201,13 @@ releases:
             stream_prefix: detectionselector
 
   - name: sbom-generator
-    installed: false
+    installed: true
     namespace: {{ .Values.namespace }}
     chart: starwitorg/sbom-generator-chart
     version: 0.0.12
 
   - name: transparency-api
-    installed: false
+    installed: true
     namespace: {{ .Values.namespace }}
     chart: starwitorg/starwit-aicapi-transparency-chart
     version: 1.0.9
@@ -227,6 +230,6 @@ releases:
           username: function.user
           password: {{ .Values.auth.functionUserPw }}
       - sampledata:
-          enabled: true
+          enabled: false
           importFolder: trash
           language: de    
