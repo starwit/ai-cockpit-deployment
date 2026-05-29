@@ -43,8 +43,8 @@ environments:
           clientSecret: {{ requiredEnv "CLIENT_SECRET" }}
           realmAdminPw: aicockpit
           functionUserPw: {{ requiredEnv "FUNCTION_USER_PW" }}
-          keycloakRealmUrlInternal: https://auth.staging.data-wolfsburg.de/realms/urbalytix
-          keycloakRealmUrlExternal: https://auth.staging.data-wolfsburg.de/realms/urbalytix
+          keycloakRealmUrlInternal: https://auth-ng.staging.data-wolfsburg.de/auth/realms/urbalytix
+          keycloakRealmUrlExternal: https://auth-ng.staging.data-wolfsburg.de/auth/realms/urbalytix
         minio:
           user: minioadmin
           password: {{ requiredEnv "MINIO_PW" }}
